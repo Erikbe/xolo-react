@@ -17,11 +17,11 @@
 
     &:checked {
       & ~ .checkmark {
-        border: 1px solid $blue;
+        border: 1px solid var(--blue);
 
         &:after {
           left: 14px;
-          border-color: $blue;
+          border-color: var(--blue);
         }
       }
     }
@@ -42,7 +42,7 @@
   &:focus {
     input:not(:disabled) {
       & ~ .checkmark {
-        border: 1px solid $blue;
+        border: 1px solid var(--blue);
       }
     }
   }
@@ -53,7 +53,7 @@
     left: 0;
     height: 50px;
     width: 100%;
-    border: 1px solid $gray-light;
+    border: 1px solid var(--gray-light);
     border-radius: 3px;
 
     &:after {
@@ -64,7 +64,7 @@
       top: 50%;
       width: 8px;
       height: 13px;
-      border: solid $gray;
+      border: solid var(--gray);
       border-width: 0 2px 2px 0;
       transform: rotate(45deg) translateY(-100%);
     }

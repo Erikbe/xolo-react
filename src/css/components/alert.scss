@@ -1,23 +1,23 @@
 .alert {
   display: block;
   line-height: 28px;
-  background: $gray-light;
+  background: var(--gray-light);
   padding: 20px;
   width: 100%;
   margin: 20px 0 40px;
 
   &-info {
-    border-top: 1.5px solid $blue;
-    color: $blue;
+    border-top: 1.5px solid var(--blue);
+    color: var(--blue);
   }
 
   &-warning {
-    border-top: 1.5px solid $pink;
-    color: $blue;
+    border-top: 1.5px solid var(--pink);
+    color: var(--blue);
   }
 
   &-danger {
-    border-top: 1.5px solid $red;
-    color: $red;
+    border-top: 1.5px solid var(--red);
+    color: var(--red);
   }
 }

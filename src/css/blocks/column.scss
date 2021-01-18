@@ -7,7 +7,7 @@
   &-reverse-mobile {
     flex-wrap: wrap-reverse;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       flex-wrap: wrap;
     }
   }
@@ -23,7 +23,7 @@
   flex-basis: 100%;
   margin: 0 0 32px 0;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     flex: 1;
     margin: 0 32px 0 0;
   }
@@ -40,7 +40,7 @@
   &-end {
     align-items: center;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       align-items: flex-end;
       margin: 0 50px 0 0;
     }
@@ -60,7 +60,7 @@
     &-right {
       display: none;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         display: block;
         flex: 1;
         flex-direction: column;
@@ -71,7 +71,7 @@
   &-start {
     align-items: center;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       align-items: flex-start;
     }
   }
@@ -80,7 +80,7 @@
     &-#{$i} {
       flex: 1 1 100%;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         flex: #{$i};
       }
     }
@@ -90,7 +90,7 @@
 .order-first-small {
   order: -1;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     order: 0;
   }
 }

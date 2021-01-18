@@ -5,11 +5,11 @@
   min-width: 0;
   height: 100%;
   word-wrap: break-word;
-  background-color: $gray-light;
+  background-color: var(--gray-light);
 
   &-blue {
-    background: $blue;
-    color: $white;
+    background: var(--blue);
+    color: var(--white);
 
     .card-title,
     .card-header,
@@ -17,35 +17,35 @@
     .card-footer a,
     .list-check,
     p {
-      color: $white;
+      color: var(--white);
     }
   }
 
   &-red {
-    color: $white;
-    background: $red;
+    color: var(--white);
+    background: var(--red);
 
     p,
     .card-title,
     .list-check {
-      color: $white;
+      color: var(--white);
     }
   }
 
   &-pink {
-    background: $pink;
+    background: var(--pink);
   }
 
   &-darkpink {
-    background: $pink-dark;
+    background: var(--pink)-dark;
   }
 
   &-gray {
-    background: $gray-dark;
+    background: var(--gray-dark);
   }
 
   &-lightgray {
-    background: rgba($gray-dark, .4);
+    background: rgba(var(--gray-dark), .4);
   }
 
   .card-image {
@@ -53,8 +53,8 @@
   }
 
   .card-title {
-    font-family: $font-tertiary;
-    font-weight: $font-weight-bold;
+    font-family: var(--font-tertiary);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 20px;
 
     h3 {
@@ -69,14 +69,14 @@
     .flex-center {
       display: block;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         display: flex;
       }
 
       h4 {
         margin-bottom: 24px;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           margin-bottom: 0;
         }
       }
@@ -93,10 +93,10 @@
 
   &-recommend {
     height: auto;
-    background: $white;
-    box-shadow: 0 8px 14px 0 $shadow-color;
+    background: var(--white);
+    box-shadow: 0 8px 14px 0 var(--shadow-color);
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       flex-direction: row;
     }
 
@@ -111,24 +111,24 @@
 }
 
 .card-product {
-  font-size: $font-size-medium;
+  font-size: var(--font-size-medium);
 
   p {
-    line-height: $line-height-large;
+    line-height: var(--line-height-large);
   }
 
   .card-title {
-    font-size: $font-size-large;
+    font-size: var(--font-size-large);
   }
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     .card-body,
     .card-footer {
       padding: 56px;
     }
 
     .card-title {
-      font-size: $font-size-larger;
+      font-size: var(--font-size-larger);
     }
   }
 
@@ -145,14 +145,14 @@
 }
 
 .card-referral {
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
   padding: 24px;
-  background: $pink;
+  background: var(--pink);
   margin-bottom: 25px;
   border-radius: 3px;
   max-width: 550px;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     max-width: 100%;
   }
 }
@@ -164,12 +164,12 @@
   position: relative;
   margin: -24px;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     flex-direction: row;
     margin: 0;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     margin-bottom: 0;
   }
 
@@ -182,20 +182,20 @@
     height: auto;
     top: 0;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       border-radius: 10px;
       max-width: 230px;
       margin: 0 0 32px 0;
     }
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       height: 300px;
     }
 
     &:hover {
       top: 0;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         top: -5px;
       }
 
@@ -209,21 +209,21 @@
       display: flex;
       flex-direction: row;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         display: block;
       }
 
       .card-text {
         width: 256px;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           width: 100%;
         }
 
         p {
           margin: 0;
 
-          @include respond-to('small') {
+          @media (min-width: 768px) {
             margin: 0 0 32px 0;
           }
         }
@@ -232,7 +232,7 @@
       .btn {
         display: none;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           display: inline-block;
         }
       }
@@ -242,28 +242,28 @@
         min-width: 48px;
         margin-left: auto;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           display: none;
         }
       }
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         padding: 40px;
       }
 
       &:hover,
       &:focus {
         p {
-          color: rgba($white, .5);
+          color: rgba(var(--white), .5);
         }
 
         .btn-blue {
-          background: darken($blue, 8%);
-          color: $white;
+          background: darken(var(--blue), 8%);
+          color: var(--white);
         }
 
         .btn-red {
-          background: darken($red, 8%);
+          background: darken(var(--red), 8%);
         }
       }
     }
@@ -271,29 +271,29 @@
     &-lightgray {
       background: #697AA8;
       z-index: 1;
-      color: $white;
+      color: var(--white);
     }
 
     &-gray {
       background: #435892;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         margin: 16px -25px 32px;
       }
     }
   }
 
   .link-more {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
     left: 24px;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       position: absolute;
       bottom: -30px;
       left: 0;
     }
 
-    @include respond-to('large') {
+    @media (min-width: 1440px) {
       right: 40px;
       left: auto;
     }

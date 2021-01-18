@@ -8,22 +8,22 @@ table {
 
   th,
   td {
-    color: $white;
+    color: var(--white);
     padding: 20px 40px;
   }
 
   th {
-    font-weight: $font-weight-normal;
+    font-weight: var(--font-weight-normal);
     background: #0a2264;
     text-align: left;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       width: 360px;
     }
   }
 
   td {
-    background: $blue;
+    background: var(--blue);
     text-align: center;
     vertical-align: middle;
   }
@@ -47,24 +47,24 @@ table {
   margin: 16px 0;
   grid-column: wrapper-start / wrapper-end;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     margin: 0;
   }
 
   .row {
-    border-bottom: 1px solid $gray-lightest;
+    border-bottom: 1px solid var(--gray-lightest);
     margin: 0;
     flex-wrap: nowrap;
 
     &-heading {
       .cell {
-        color: $blue;
+        color: var(--blue);
 
-        @include respond-to('small') {
-          border-top: 1px solid $gray-lightest;
+        @media (min-width: 768px) {
+          border-top: 1px solid var(--gray-lightest);
         }
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           display: flex;
           flex-direction: column;
           height: auto;
@@ -76,10 +76,10 @@ table {
         }
 
         &-heading {
-          @include respond-to('medium') {
+          @media (min-width: 1024px) {
             display: block;
-            color: $blue;
-            font-weight: $font-weight-bold;
+            color: var(--blue);
+            font-weight: var(--font-weight-bold);
             padding-bottom: 56px;
             height: auto;
             text-align: left;
@@ -90,7 +90,7 @@ table {
       .information {
         display: none;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           display: flex;
           flex-direction: column;
           height: 100%;
@@ -98,13 +98,13 @@ table {
       }
 
       .name {
-        font-size: $font-size-small;
-        font-weight: $font-weight-bold;
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-bold);
 
-        @include respond-to('medium') {
-          font-size: $font-size-medium;
-          font-weight: $font-weight-normal;
-          line-height: $line-height-largest;
+        @media (min-width: 1024px) {
+          font-size: var(--font-size-medium);
+          font-weight: var(--font-weight-normal);
+          line-height: var(--line-height-largest);
         }
       }
 
@@ -114,28 +114,28 @@ table {
 
       .price {
         position: relative;
-        font-size: $font-size-medium;
-        font-weight: $font-weight-bold;
-        line-height: $line-height-large;
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-large);
         margin-top: 24px;
 
-        @include respond-to('semi-large') {
-          font-size: $font-size-large;
+        @media (min-width: 1366px) {
+          font-size: var(--font-size-large);
         }
       }
 
       .description,
       .price-extra,
       .cell-heading-extra {
-        font-size: $font-size-tiny;
-        color: $gray-darker;
-        line-height: $line-height-larger;
-        font-weight: $font-weight-normal;
+        font-size: var(--font-size-tiny);
+        color: var(--gray-darker);
+        line-height: var(--line-height-larger);
+        font-weight: var(--font-weight-normal);
       }
 
       .price-extra {
         position: absolute;
-        line-height: $line-height-normal;
+        line-height: var(--line-height-normal);
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
@@ -148,9 +148,9 @@ table {
 
     &-category {
       .cell:first-child {
-        color: $blue;
-        background: $gray-bg;
-        font-size: $font-size-small;
+        color: var(--blue);
+        background: var(--gray-bg);
+        font-size: var(--font-size-small);
         text-align: left;
         max-width: 100%;
         margin: 0;
@@ -162,15 +162,15 @@ table {
       display: none;
       border: none;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         display: flex;
       }
 
       &.-popular {
         strong {
           flex: 3;
-          color: $white;
-          background: $red;
+          color: var(--white);
+          background: var(--red);
           border: none;
           text-transform: uppercase;
         }
@@ -189,8 +189,8 @@ table {
 
         &:last-child {
           flex: 3;
-          color: $white;
-          background: $red;
+          color: var(--white);
+          background: var(--red);
           border: none;
           text-transform: uppercase;
         }
@@ -200,13 +200,13 @@ table {
     &-footer {
       .cell {
         display: flex;
-        color: $blue;
-        font-size: $font-size-tiniest;
-        line-height: $line-height-large;
+        color: var(--blue);
+        font-size: var(--font-size-tiniest);
+        line-height: var(--line-height-large);
         height: auto;
         padding: 24px 0;
         text-align: center;
-        border-left: 1px solid $gray-lightest;
+        border-left: 1px solid var(--gray-lightest);
         align-items: center;
         justify-content: center;
 
@@ -217,8 +217,8 @@ table {
         &:first-child {
           border-left: none;
 
-          @include respond-to('small') {
-            border-left: 1px solid $gray-lightest;
+          @media (min-width: 768px) {
+            border-left: 1px solid var(--gray-lightest);
           }
         }
 
@@ -233,8 +233,8 @@ table {
     display: flex;
     flex: 1;
     position: relative;
-    color: $gray-darker;
-    font-size: $font-size-tiniest;
+    color: var(--gray-darker);
+    font-size: var(--font-size-tiniest);
     line-height: 20px;
     text-align: center;
     height: 56px;
@@ -242,16 +242,16 @@ table {
     align-items: center;
     justify-content: center;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       padding: 0 24px;
-      border-left: 1px solid $gray-lightest;
+      border-left: 1px solid var(--gray-lightest);
     }
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       padding: 0 16px 0 24px;
 
       &.-highlighted {
-        background: $gray-bg;
+        background: var(--gray-bg);
       }
     }
 
@@ -263,7 +263,7 @@ table {
       text-align: left;
       justify-content: flex-start;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         min-width: 130px;
         max-width: none;
         margin: 0;
@@ -273,9 +273,9 @@ table {
     &:last-child {
       margin-right: 18px;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         margin: 0;
-        border-right: 1px solid $gray-lightest;
+        border-right: 1px solid var(--gray-lightest);
       }
     }
 
@@ -288,16 +288,16 @@ table {
 
     &-heading {
       display: flex;
-      color: $blue-dark;
-      font-size: $font-size-tiniest;
+      color: var(--blue)-dark;
+      font-size: var(--font-size-tiniest);
       line-height: 20px;
       width: 100%;
       height: 56px;
       align-items: center;
       justify-content: space-between;
 
-      @include respond-to('medium') {
-        font-size: $font-size-tiny;
+      @media (min-width: 1024px) {
+        font-size: var(--font-size-tiny);
       }
     }
 
@@ -320,7 +320,7 @@ table {
     &-false:before {
       background: url('#{$path-images}www/icon-x.svg') no-repeat;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         display: none;
       }
     }

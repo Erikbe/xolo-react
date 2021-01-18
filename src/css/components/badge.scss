@@ -2,15 +2,15 @@
   position: absolute;
   top: 0;
   right: 32px;
-  color: $white;
-  font-weight: $font-weight-bold;
-  font-size: $font-size-normal;
-  background-color: $blue;
+  color: var(--white);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-normal);
+  background-color: var(--blue);
   padding: 11px 15px;
   text-align: center;
 
   &-red {
-    background-color: $red;
+    background-color: var(--red);
   }
 
   &-link {
@@ -23,13 +23,13 @@
     a {
       display: block;
       position: absolute;
-      color: $blue;
-      font-weight: $font-weight-bold;
-      font-size: $font-size-normal;
-      background-color: $gray;
+      color: var(--blue);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-normal);
+      background-color: var(--gray);
 
       &.link-more {
-        font-size: $font-size-normal;
+        font-size: var(--font-size-normal);
         text-align: left;
         padding: 25px 65px 25px 25px;
 

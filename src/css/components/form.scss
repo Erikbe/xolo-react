@@ -10,7 +10,7 @@
 
   .continue-btn {
     padding: 15px 35px;
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 
   &-signup {
@@ -20,7 +20,7 @@
   &-horizontal {
     display: block;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       display: flex;
     }
 
@@ -32,10 +32,10 @@
     .radio {
       width: 100%;
       margin: 15px 0;
-      font-size: $font-size-tiny;
+      font-size: var(--font-size-tiny);
 
-      @include respond-to('medium') {
-        font-size: $font-size-small;
+      @media (min-width: 1024px) {
+        font-size: var(--font-size-small);
       }
 
       .placeholder-container {
@@ -46,7 +46,7 @@
       &:first-child {
         margin-right: 0;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           margin-right: 20px;
         }
       }
@@ -57,7 +57,7 @@
 .form-select {
   width: 100%;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     width: 50%;
   }
 
@@ -67,12 +67,12 @@
     cursor: pointer;
     padding: 10px;
     margin-right: 10px;
-    border: 1px solid $gray-light;
+    border: 1px solid var(--gray-light);
     border-radius: 3px;
 
     &:hover,
     &:focus {
-      border: 1px solid $blue;
+      border: 1px solid var(--blue);
     }
 
     .select2-selection {
@@ -83,7 +83,7 @@
 
   .select2-container--above,
   .select2-container--below {
-    border: 1px solid $blue;
+    border: 1px solid var(--blue);
   }
 }
 
@@ -96,14 +96,14 @@
 
   &-text {
     position: relative;
-    background-color: $white;
+    background-color: var(--white);
     padding: 8px;
   }
 
   &:before {
     content: '';
     position: absolute;
-    background-color: $gray;
+    background-color: var(--gray);
     height: 1px;
     top: 50%;
     left: 0;

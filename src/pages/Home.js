@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, GridContent, GridMedia } from '../components/Grid';
 import Section from '../components/Section';
-import Iconbox from '../components/Iconbox';
+import { Iconbox, IconboxRow } from '../components/Iconbox';
 import { HeroPng, HeroWebp, Computer, Laptop, Travel, CreateCompany, IdCardReader
 , UploadExpenses} from '../images/www/home/';
 
@@ -13,7 +13,7 @@ function Home() {
         <Section header='true' color='blue'>
             <Grid className='media-start-8'>
                 <GridContent>
-                    <h1 className='small'>We help you get your solo business up and running</h1>
+                    <h1 className='small text-red'>We help you get your solo business up and running</h1>
                 </GridContent>
                 <GridMedia img={HeroWebp} />
             </Grid>
@@ -22,7 +22,7 @@ function Home() {
         <Section>
             <Grid className='content-span-wrapper-end'>
                 <GridContent>
-                    <div className='iconbox-row'>
+                    <IconboxRow>
                         <Iconbox
                             icon='business-red'
                             title='Business set-up'
@@ -38,7 +38,7 @@ function Home() {
                             title='Work remotely'
                             text='Stellar support and automated accounting loved by experts in 119 countries'
                         />
-                    </div>
+                    </IconboxRow>
                 </GridContent>
             </Grid>
 

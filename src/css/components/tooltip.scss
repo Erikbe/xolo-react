@@ -12,16 +12,16 @@
 
   .tooltip-text {
     position: absolute;
-    color: $gray-darker;
-    font-size: $font-size-tiniest;
-    line-height: $line-height-large;
-    background: $white;
+    color: var(--gray-darker);
+    font-size: var(--font-size-tiniest);
+    line-height: var(--line-height-large);
+    background: var(--white);
     width: 200px;
     text-align: left;
     padding: 8px 16px;
-    border: 1px solid $gray-lightest;
+    border: 1px solid var(--gray-lightest);
     border-radius: 8px;
-    box-shadow: 0 8px 14px 0 $gray-bg;
+    box-shadow: 0 8px 14px 0 var(--gray-bg);
     transition: opacity .25s;
     top: 100%;
     left: -88px;
@@ -29,7 +29,7 @@
     opacity: 0;
     z-index: 1;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       top: -5px;
       left: 125%;
 

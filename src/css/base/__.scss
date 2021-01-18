@@ -1,8 +1,59 @@
 $path-images: '/images/' !default;
 $path-fonts: '/fonts/' !default;
 
-@import 'base.colors';
-@import 'base.mixins';
+:root {
+  --blue:         #082471;
+  --blue-dark:    #101b3a;
+  --red:          #f96156;
+  --pink:         #fbe2d9;
+  --pink-dark:    #f0c9c8;
+  --white:        #fff;
+  --black:        #000;
+
+  --gray:         #e1e4ed;
+  --gray-bg:      #f8fafc;
+  --gray-light:   #f7f8fa;
+  --gray-lighter: #f0f1f6;
+  --gray-lightest: #ebeff2;
+  --gray-dark:    #c7ccdd;
+  --gray-darker:  #777d8e;
+  --shadow-color: #f1f1f1;
+
+  --font-primary: 'Gellix', helvetica, arial, sans-serif;
+  --font-secondary: 'Gellix-Medium', helvetica, arial, sans-serif;
+  --font-tertiary: 'Gellix-SemiBold', helvetica, arial, sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --font-weight-black: 700;
+
+  --font-size-tiniest: 12px;
+  --font-size-tiny: 14px;
+  --font-size-small: 16px;
+  --font-size-normal: 17px;
+  --font-size-normal-plus: 18px;
+  --font-size-medium: 24px;
+  --font-size-large: 32px;
+  --font-size-larger: 56px;
+  --font-size-largest: 72px;
+
+  --line-height-small: .75;
+  --line-height-normal: 1;
+  --line-height-medium: 1.25;
+  --line-height-large: 1.5;
+  --line-height-larger: 1.7;
+  --line-height-largest: 2;
+
+  --tiny: 360px;
+  --small: 768px;
+  --medium: 1024px;
+  --semi-large: 1366px;
+  --large: 1440px;
+  --extra-large: 1600px;
+}
+
 @import 'base.reset';
 @import 'base.typography';
-@import 'base.utility';
+// @import 'base.utility';

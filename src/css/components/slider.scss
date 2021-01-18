@@ -15,7 +15,7 @@
         padding: 20px;
 
         p {
-          font-size: $font-size-tiny;
+          font-size: var(--font-size-tiny);
           margin: 0;
         }
       }
@@ -71,7 +71,7 @@
     .slick-arrow {
       padding: 9px 10px;
       border-radius: 50%;
-      background: $white;
+      background: var(--white);
       box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
 
       img {

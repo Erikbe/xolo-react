@@ -1,10 +1,10 @@
 .btn {
   display: inline-block;
-  color: $blue;
-  background: rgba($blue, .1);
-  font-family: $font-tertiary;
-  font-size: $font-size-small;
-  font-weight: $font-weight-bold;
+  color: var(--blue);
+  background: rgba(var(--blue), .1);
+  font-family: var(--font-tertiary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
   line-height: 26px;
   padding: 11px 24px;
   border-radius: 100px;
@@ -13,8 +13,8 @@
 
   &:hover,
   &:focus {
-    color: $blue;
-    background: rgba($blue, .2);
+    color: var(--blue);
+    background: rgba(var(--blue), .2);
     text-decoration: none;
   }
 
@@ -23,11 +23,11 @@
     width: 100px;
     height: 48px;
     border-radius: 100px;
-    border: 1px solid $blue;
+    border: 1px solid var(--blue);
     background: transparent;
 
     &-white {
-      border: 1px solid $white;
+      border: 1px solid var(--white);
       position: relative;
       width: 100px;
       height: 48px;
@@ -47,7 +47,7 @@
 
       &:hover,
       &:focus {
-        background: rgba($white, .2);
+        background: rgba(var(--white), .2);
       }
     }
 
@@ -68,29 +68,29 @@
   }
 
   &-large {
-    font-size: $font-size-normal-plus;
+    font-size: var(--font-size-normal-plus);
     padding: 13px 30px 17px;
   }
 
   &-transparent {
-    color: $white;
-    background: rgba($white, .1);
+    color: var(--white);
+    background: rgba(var(--white), .1);
 
     &:hover,
     &:focus {
-      color: $white;
-      background: rgba($white, .2);
+      color: var(--white);
+      background: rgba(var(--white), .2);
     }
   }
 
   &-red {
-    color: $white;
-    background: $red;
+    color: var(--white);
+    background: var(--red);
     border: none;
 
     &:hover,
     &:focus {
-      color: $white;
+      color: var(--white);
       background: #d9544b;
     }
 
@@ -100,23 +100,23 @@
   }
 
   &-blue {
-    color: $white;
-    background: $blue;
+    color: var(--white);
+    background: var(--blue);
 
     &:hover,
     &:focus {
-      color: $white;
+      color: var(--white);
       background: #274083;
     }
   }
 
   &-white {
-    background: $gray-lightest;
+    background: var(--gray-lightest);
 
     &:hover,
     &:focus {
-      color: rgba($blue, .4);
-      background: $gray-lightest;
+      color: rgba(var(--blue), .4);
+      background: var(--gray-lightest);
     }
   }
 }
@@ -132,7 +132,7 @@
   border-radius: 50%;
   box-shadow: 0 0 35px rgba(0,0,0,0.3);
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     transform: translate(-40%, 0);
   }
 
@@ -160,7 +160,7 @@
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     display: block;
-    background: $blue;
+    background: var(--blue);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -181,7 +181,7 @@
     }
 
     &:after {
-      background: $red;
+      background: var(--red);
     }
   }
 
@@ -190,7 +190,7 @@
     position: relative;
     z-index: 3;
     margin-left: 5px;
-    border-left: 20px solid $white;
+    border-left: 20px solid var(--white);
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
   }
@@ -209,12 +209,12 @@
 
 @keyframes animate-background-blue {
   0% {
-    background: $blue;
+    background: var(--blue);
   }
 }
 
 @keyframes animate-background-red{
   0% {
-    background: $red;
+    background: var(--red);
   }
 }

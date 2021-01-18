@@ -5,14 +5,14 @@
   align-items: center;
   justify-content: space-between;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     display: flex;
   }
 }
 
 .nav-item {
   display: inline-block;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
   list-style: none;
   padding: 0;
 
@@ -22,8 +22,8 @@
 
   &.active {
     .nav-item-link {
-      color: $white;
-      border-color: $white;
+      color: var(--white);
+      border-color: var(--white);
     }
   }
 
@@ -34,10 +34,10 @@
     }
 
     .nav-item-link.nav-item-link-dropdown {
-      color: $red;
+      color: var(--red);
 
       &:after {
-        border-color: $red;
+        border-color: var(--red);
       }
     }
 
@@ -54,7 +54,7 @@
       height: 8px;
       margin: 0 0 3px 12px;
       box-sizing: border-box;
-      border: solid $white;
+      border: solid var(--white);
       border-width: 0 0 2px 2px;
       transform: rotate(-45deg);
       transform-origin: 50% 50%;
@@ -63,12 +63,12 @@
 }
 
 .nav-item-link {
-  color: $white;
+  color: var(--white);
 
   &:hover,
   &:focus {
     cursor: pointer;
-    color: rgba($white, .5);
+    color: rgba(var(--white), .5);
 
     &:after {
       opacity: .5;
@@ -117,7 +117,7 @@
   overflow: visible;
   max-height: 0;
   max-width: none;
-  background: $blue;
+  background: var(--blue);
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -151,7 +151,7 @@
       display: inline-block;
       margin: 0 0 24px 0;
       padding-bottom: 14px;
-      border-bottom: 1px solid $gray-lightest;
+      border-bottom: 1px solid var(--gray-lightest);
     }
   }
   .iconbox {
@@ -162,7 +162,7 @@
     &:hover,
     &:focus {
       .iconbox-text {
-        color: $blue;
+        color: var(--blue);
       }
     }
 
@@ -171,8 +171,8 @@
     }
 
     &-title {
-      color: $blue;
-      font-size: $font-size-normal-plus;
+      color: var(--blue);
+      font-size: var(--font-size-normal-plus);
     }
 
     &.-bubble:after {
@@ -203,7 +203,7 @@
     height: 8px;
     margin: 0 0 3px 12px;
     box-sizing: border-box;
-    border: solid $white;
+    border: solid var(--white);
     border-width: 0 0 2px 2px;
     transform: rotate(-45deg);
     transform-origin: 50% 50%;
@@ -211,7 +211,7 @@
 }
 
 .nav-account-dropdown {
-  background: $gray !important;
+  background: var(--gray) !important;
   border: none;
   width: 200px;
   left: auto;
@@ -225,7 +225,7 @@
     position: absolute;
     background: transparent;
     border: 10px solid transparent;
-    border-bottom-color: $gray;
+    border-bottom-color: var(--gray);
     margin-left: -20px;
     height: 0;
     width: 0;
@@ -247,12 +247,12 @@
   &-item {
     a:not(.btn) {
       display: block;
-      color: $blue;
+      color: var(--blue);
       padding: 15px 20px;
 
       &:hover,
       &:focus {
-        color: rgba($blue, .5)
+        color: rgba(var(--blue), .5)
       }
     }
   }
@@ -260,8 +260,8 @@
 
 .nav-item-notification {
   position: absolute;
-  color: $blue;
-  background: $gray;
+  color: var(--blue);
+  background: var(--gray);
   width: 200px;
   padding: 15px;
   margin: -15px 0 0;
@@ -270,14 +270,14 @@
 
   &:hover,
   &:focus {
-    color: rgba($blue, .5);
+    color: rgba(var(--blue), .5);
   }
 
   &:before {
     content: "";
     position: absolute;
     border: 10px solid transparent;
-    border-bottom-color: $gray;
+    border-bottom-color: var(--gray);
     margin-left: -20px;
     height: 0;
     width: 0;
@@ -299,7 +299,7 @@
   pointer-events: auto;
   transition: opacity ease-out .2s;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -316,11 +316,11 @@
     margin-top: -1px;
     height: 2px;
     width: 32px;
-    background: $white;
+    background: var(--white);
     transition: all .2s;
 
     body.m-sidebar & {
-      background: $white;
+      background: var(--white);
     }
 
     &:nth-child(1) {
@@ -356,7 +356,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: $blue;
+  background: var(--blue);
   transform: translateX(100%);
   transition: transform .15s;
   pointer-events: auto;
@@ -398,7 +398,7 @@
     }
 
     &.m-open {
-      background: darken($blue, 5%);
+      // background: darken(var(--blue), 5%);
 
       .b-sidebar__subnav {
         display: block;
@@ -412,17 +412,17 @@
 
   &-link {
     display: block;
-    color: $white;
-    font-size: $font-size-large;
+    color: var(--white);
+    font-size: var(--font-size-large);
     line-height: 54px;
 
 
     &:hover,
     &:focus {
-      color: $red !important;
+      color: var(--red) !important;
 
       &:after {
-        border-color: $red;
+        border-color: var(--red);
       }
     }
 
@@ -438,7 +438,7 @@
         height: 30px;
         border-radius: 15px;
         margin: -15px 10px -15px 0;
-        background: $blue;
+        background: var(--blue);
         overflow: hidden;
         display: inline-block;
         border: 1px solid #fff;
@@ -485,7 +485,7 @@
       width: 10px;
       height: 10px;
       box-sizing: border-box;
-      border: solid $white;
+      border: solid var(--white);
       border-width: 0 0 2px 2px;
       transition: all ease-out .2s;
       transform: rotate(-135deg);
@@ -519,7 +519,7 @@
     &.is-open {
       opacity: 1;
       transform: translateX(0);
-      background: $blue;
+      background: var(--blue);
     }
 
     li:nth-child(2) {
@@ -530,7 +530,7 @@
       &:hover,
       &:focus {
         .iconbox-text {
-          color: rgba($white, .5);
+          color: rgba(var(--white), .5);
         }
       }
 
@@ -549,23 +549,23 @@
 
     .article-links {
       a {
-        color: $white;
+        color: var(--white);
         display: inline-block;
         margin: 0 0 20px 0;
-        font-size: $font-size-tiny;
+        font-size: var(--font-size-tiny);
         padding-top: 20px;
         width: 100%;
-        border-top: 1px solid rgba($gray-dark, .2);
+        border-top: 1px solid rgba(var(--gray-dark), .2);
 
         &:last-child {
-          border-bottom: 1px solid rgba($gray-dark, .2);
+          border-bottom: 1px solid rgba(var(--gray-dark), .2);
           padding-bottom: 20px;
         }
       }
     }
 
     .nav-sidebar-link {
-      font-size: $font-size-medium;
+      font-size: var(--font-size-medium);
     }
   }
 
@@ -581,12 +581,12 @@
 
   .iconbox {
     padding: 0 0 46px 0;
-    border-bottom: 1px solid rgba($gray-dark, .1);
+    border-bottom: 1px solid rgba(var(--gray-dark), .1);
 
     &:hover,
     &:focus {
       &-text {
-        color: rgba($white, .5);
+        color: rgba(var(--white), .5);
       }
     }
 
@@ -598,13 +598,13 @@
     }
 
     &-title {
-      color: $white;
-      font-size: $font-size-large;
+      color: var(--white);
+      font-size: var(--font-size-large);
     }
 
     &-text {
-      color: rgba($white, .5);
-      font-size: $font-size-tiny;
+      color: rgba(var(--white), .5);
+      font-size: var(--font-size-tiny);
     }
   }
 }

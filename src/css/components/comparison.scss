@@ -1,13 +1,13 @@
 .plans-comparison {
-  font-size: $font-size-tiny;
+  font-size: var(--font-size-tiny);
   margin: 16px;
   grid-column: wrapper-start / wrapper-end;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     margin: 0;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     display: grid;
     column-gap: 32px;
     grid-template-columns: [start] repeat(16, minmax(0, 40px)) [end];
@@ -16,7 +16,7 @@
   &-header {
     display: none;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       display: grid;
       top: 100px;
       grid-gap: 32px;
@@ -31,20 +31,20 @@
 
   &-heading {
     display: flex;
-    color: $blue;
-    font-family: $font-tertiary;
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-normal;
+    color: var(--blue);
+    font-family: var(--font-tertiary);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
     margin-bottom: 8px;
   }
 
   &-row {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid $gray-lightest;
+    border-bottom: 1px solid var(--gray-lightest);
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       display: grid;
       grid-gap: 32px;
       grid-template-columns: [start] repeat(16, minmax(0, 40px)) [end];
@@ -53,10 +53,10 @@
   }
 
   &-cell {
-    color: $blue-dark;
+    color: var(--blue)-dark;
     display: flex;
     position: relative;
-    line-height: $line-height-large;
+    line-height: var(--line-height-large);
     flex-direction: column;
     flex: 1 1 100%;
     padding: 24px 0 16px;
@@ -64,13 +64,13 @@
     &:before {
       content: attr(data-plans-name);
       position: absolute;
-      color: $red;
+      color: var(--red);
       text-transform: uppercase;
       top: 0;
     }
 
     &:nth-child(1) {
-      color: $blue;
+      color: var(--blue);
       flex-basis: 100%;
       text-align: left;
       align-items: flex-start;
@@ -78,16 +78,16 @@
       border-left: none;
     }
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       padding: 16px;
       flex-basis: 50%;
     }
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       flex-basis: auto;
       align-items: center;
       text-align: center;
-      border-left: 1px solid $gray-lightest;
+      border-left: 1px solid var(--gray-lightest);
 
       &:before {
         display: none;
@@ -136,38 +136,38 @@
   }
 
   &-cell-full-width {
-    font-size: $font-size-tiniest;
-    line-height: $line-height-normal;
+    font-size: var(--font-size-tiniest);
+    line-height: var(--line-height-normal);
     align-items: flex-start;
     padding: 16px 0;
     text-transform: uppercase;
     letter-spacing: .8px;
 
     &:nth-child(1) {
-      color: $red;
+      color: var(--red);
       grid-column: start / end;
     }
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       padding: 16px;
     }
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       padding: 16px 0;
     }
   }
 
   &-pricing {
-    color: $red;
-    font-size: $font-size-normal-plus;
+    color: var(--red);
+    font-size: var(--font-size-normal-plus);
     margin-bottom: 16px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       margin-bottom: 24px;
     }
 
     .pricing-extra {
-      color: $gray-darker;
-      font-size: $font-size-tiny;
+      color: var(--gray-darker);
+      font-size: var(--font-size-tiny);
     }
   }
 

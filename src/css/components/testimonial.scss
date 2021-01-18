@@ -3,10 +3,10 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  color: $blue;
-  font-size: $font-size-medium;
-  line-height: $line-height-medium;
-  font-weight: $font-weight-bold;
+  color: var(--blue);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-medium);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   padding: 0 0 calc(27px + 2rem);
   min-height: 170px;
@@ -34,7 +34,7 @@
     background: url('#{$path-images}www/quote-red.svg') no-repeat;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     &-fluid {
       text-align: left;
       flex-direction: row;
@@ -57,9 +57,9 @@
   }
 
   &.small {
-    font-size: $font-size-medium;
+    font-size: var(--font-size-medium);
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       font-size: 28px;
     }
   }

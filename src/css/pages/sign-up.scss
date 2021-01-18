@@ -3,7 +3,7 @@
     padding-top: 100px;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     .card-product {
       .card-title {
         margin-bottom: 30px;
@@ -24,7 +24,7 @@
   }
 
   .card-gray {
-    background-color: $gray-light;
+    background-color: var(--gray-light);
   }
 
   .section-title {
@@ -33,10 +33,10 @@
 
   .card-product {
     ul, p {
-      font-size: $font-size-normal-plus;
+      font-size: var(--font-size-normal-plus);
     }
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       .card-body,
       .card-footer {
         padding: 56px;
@@ -48,7 +48,7 @@
     }
 
     .card-extra {
-      font-size: $font-size-normal;
+      font-size: var(--font-size-normal);
       display: block;
       margin-bottom: 25px;
     }
@@ -58,7 +58,7 @@
       margin-bottom: 32px;
 
       span {
-        font-size: $font-size-normal-plus;
+        font-size: var(--font-size-normal-plus);
         padding-left: 5px;
       }
     }
@@ -86,7 +86,7 @@
   .badge {
     &-red {
       span {
-        background: $red;
+        background: var(--red);
       }
     }
   }
@@ -132,16 +132,16 @@
   flex-direction: column;
   height: 100%;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     display: flex;
   }
 
   &-gray {
-    background: $gray-light;
+    background: var(--gray-light);
   }
 
   &-pink {
-    background: $pink;
+    background: var(--pink);
   }
 
   &-text {
@@ -152,13 +152,13 @@
     height: 100%;
 
     h3 {
-      font-family: $font-primary;
-      font-size: $font-size-large;
-      line-height: $line-height-medium;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-large);
+      line-height: var(--line-height-medium);
     }
 
     p {
-      font-size: $font-size-small;
+      font-size: var(--font-size-small);
     }
   }
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../css/blocks/grid.scss'
+
 function Grid(props) {
     return (
         <article className={`grid ${props.className} ${props.align ? 'grid-' + props.align : ''}`}>

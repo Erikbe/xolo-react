@@ -5,7 +5,7 @@
   position: absolute;
 
   span {
-    font-size: $font-size-tiny;
+    font-size: var(--font-size-tiny);
     position: absolute;
     width: 220px;
     padding: 15px 0;
@@ -15,7 +15,7 @@
 
   &-small {
     span {
-      font-size: $font-size-tiniest;
+      font-size: var(--font-size-tiniest);
       width: 115px;
       padding: 5px 0;
       letter-spacing: 2px;
@@ -24,15 +24,15 @@
 
   &.-white {
     span {
-      background-color: $white;
+      background-color: var(--white);
       z-index: 1;
     }
   }
   &.-blue {
     span {
-      background-color: $blue;
+      background-color: var(--blue);
       z-index: 1;
-      color: $white;
+      color: var(--white);
     }
   }
 }

@@ -5,7 +5,7 @@
   --contentSpan: 7;
   --headingSpan: wrapper-end;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     display: grid;
     grid-template-columns: [start] minmax(100px, 1fr) [wrapper-start] repeat(16, minmax(0, 40px)) [wrapper-end] minmax(40px, 1fr) [end];
     grid-gap: 32px;
@@ -18,12 +18,12 @@
     --contentStart: wrapper-start;
     --contentSpan: wrapper-end;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       --contentStart: 4;
       --contentSpan: 12;
     }
 
-    @include respond-to('large') {
+    @media (min-width: 1440px) {
       --contentStart: 5;
       --contentSpan: 10;
     }
@@ -37,7 +37,7 @@
     --contentStart: wrapper-start;
     --contentSpan: wrapper-end;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       --contentStart: 4;
       --contentSpan: 12;
     }
@@ -51,7 +51,7 @@
   line-height: 0;
   padding: 0 0 24px 0;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     padding: 0;
   }
 
@@ -74,7 +74,7 @@
   padding: 24px;
   justify-content: center;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     padding: 0;
   }
 }
@@ -84,7 +84,7 @@
   grid-row: 1;
   padding: 0 24px;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     padding: 0 0 40px;
   }
 
@@ -95,8 +95,8 @@
   p {
     margin: 24px 0;
 
-    @include respond-to('medium') {
-      font-size: $font-size-medium;
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-medium);
       margin: 40px 0 0;
     }
   }

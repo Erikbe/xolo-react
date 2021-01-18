@@ -3,88 +3,28 @@
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  src: url('../../fonts/Gellix-Regular.woff2') format('woff2'),
+  src: url('../../fonts/Gellix-Regular.woff2') format('woff2');
 }
 
-$base-font-size: 100%;
-$base-line-height: 1;
-
-$font-primary: 'Gellix', helvetica, arial, sans-serif;
-$font-secondary: 'Gellix-Medium', helvetica, arial, sans-serif;
-$font-tertiary: 'Gellix-SemiBold', helvetica, arial, sans-serif;
-
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 600;
-$font-weight-black: 700;
-
-$font-size-tiniest: 12px;
-$font-size-tiny: 14px;
-$font-size-small: 16px;
-$font-size-normal: 17px;
-$font-size-normal-plus: 18px;
-$font-size-medium: 24px;
-$font-size-large: 32px;
-$font-size-larger: 56px;
-$font-size-largest: 72px;
-
-$font-sizes: (
-        'tiniest': $font-size-tiniest,
-        'tiny':  $font-size-tiny,
-        'small':  $font-size-small,
-        'normal': $font-size-normal,
-        'normal-plus': $font-size-normal-plus,
-        'medium': $font-size-medium,
-        'large': $font-size-large,
-        'larger': $font-size-larger,
-        'largest': $font-size-largest
-);
-
-$line-height-small: .75;
-$line-height-normal: $base-line-height;
-$line-height-medium: 1.25;
-$line-height-large: 1.5;
-$line-height-larger: 1.7;
-$line-height-largest: 2;
-
-$line-heights: (
-        'small': $line-height-small,
-        'normal': $line-height-normal,
-        'medium': $line-height-medium,
-        'large': $line-height-large,
-        'larger': $line-height-larger,
-        'largest': $line-height-largest
-);
-
-$body-font-color: $blue;
-$body-font-family: $font-primary;
-$body-font-weight: $font-weight-normal;
-$body-font-style: normal;
-
-$font-weights:  (strong $font-tertiary, small $font-primary);
-
 body {
-  @include text-rendering;
-
-  color: $body-font-color;
-  font-family: $font-primary;
-  font-size: $font-size-normal-plus;
-  line-height: $base-line-height;
+  color: var(--blue);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-normal-plus);
+  line-height: var(--base-line-normal);
 }
 
 h1 {
   font-size: 36px;
-  font-family: $font-secondary;
-  font-weight: $font-weight-normal;
-  line-height: $line-height-normal;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
   margin-bottom: 32px;
 
-  @include respond-to('medium') {
-    font-size: $font-size-largest;
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-largest);
 
     &.small {
-      font-size: $font-size-larger;
+      font-size: var(--font-size-larger);
     }
 
     &.medium {
@@ -98,49 +38,49 @@ h1 {
 }
 
 h2 {
-  font-size: $font-size-large;
-  line-height: $line-height-medium;
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-medium);
   margin-bottom: 40px;
 
-  @include respond-to('medium') {
-    font-size: $font-size-larger;
-    line-height: $line-height-normal;
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-larger);
+    line-height: var(--line-height-normal);
   }
 }
 
 h3 {
-  font-size: $font-size-medium;
+  font-size: var(--font-size-medium);
   margin-bottom: 16px;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     margin-bottom: 24px;
   }
 
   &.medium {
-    @include respond-to('medium') {
-      font-size: $font-size-large;
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-large);
     }
   }
 
   &.large {
     font-size: 46px;
 
-    @include respond-to('medium') {
-      font-size: $font-size-larger;
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-larger);
     }
   }
 }
 
 h4 {
-  font-size: $font-size-medium;
+  font-size: var(--font-size-medium);
 }
 
 h5 {
-  font-size: $font-size-normal-plus;
+  font-size: var(--font-size-normal-plus);
 }
 
 h6 {
-  font-size: $font-size-normal;
+  font-size: var(--font-size-normal);
 }
 
 h2,
@@ -148,42 +88,42 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-tertiary;
+  font-family: var(--font-tertiary);
 }
 
 p, ol {
-  color: $blue-dark;
-  line-height: $line-height-larger;
+  color: var(--blue-dark);
+  line-height: var(--line-height-larger);
   margin: 0 0 32px 0;
 
   &.tiny {
-    font-size: $font-size-tiny;
+    font-size: var(--font-size-tiny);
   }
 
   &.small {
-    font-size: $font-size-normal;
-    line-height: $line-height-large;
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-large);
   }
 
   &.medium {
-    font-size: $font-size-medium;
+    font-size: var(--font-size-medium);
   }
 
   &.large {
-    color: $blue;
-    font-size: $font-size-medium;
-    line-height: $line-height-large;
+    color: var(--blue);
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-large);
   }
 }
 
 small {
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 }
 
 b,
 strong {
-  font-family: $font-tertiary;
-  font-weight: $font-weight-bold;
+  font-family: var(--font-tertiary);
+  font-weight: var(--font-weight-bold);
 }
 
 a {
@@ -193,17 +133,3 @@ a {
         text-decoration: underline;
     }
 }
-
-
-/*::-webkit-input-placeholder {
-    color: $color-text-neutral;
-}
-
-input::-moz-placeholder {
-    color: $color-text-neutral;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: $color-text-neutral;
-}*/

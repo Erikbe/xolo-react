@@ -1,28 +1,28 @@
 .page-faq {
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     .section-container {
       max-width: 1205px;
       justify-content: flex-start;
     }
   }
 
-  @include respond-to('large') {
+  @media (min-width: 1440px) {
     .section-body {
       padding: 0;
     }
   }
 
   H2 {
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
     margin: 0 0 20px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       font-size: 30px;
     }
 
-    @include respond-to('large') {
-      font-size: $font-size-larger;
+    @media (min-width: 1440px) {
+      font-size: var(--font-size-larger);
     }
 
     &.locked {
@@ -31,13 +31,13 @@
         width: 24px;
         margin-bottom: -1px;
 
-        @include respond-to('small') {
+        @media (min-width: 768px) {
           width: 20px;
           height: 20px;
           background-size: 20px 20px;
         }
 
-        @include respond-to('large') {
+        @media (min-width: 1440px) {
           height: 30px;
         }
       }
@@ -53,23 +53,23 @@
       }
 
       .c-tooltip__text {
-        background: $black;
+        background: var(--black);
         border-radius: 3px;
       }
     }
   }
 
   H3 {
-    color: $blue;
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
+    color: var(--blue);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
     margin: 0 0 10px;
   }
 
   P {
-    color: $gray-darker;
-    font-size: $font-size-normal-plus;
-    line-height: $line-height-larger;
+    color: var(--gray-darker);
+    font-size: var(--font-size-normal-plus);
+    line-height: var(--line-height-larger);
     margin: 0;
   }
 
@@ -81,7 +81,7 @@
     margin: -15px;
     list-style: none;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       flex-direction: row;
     }
 
@@ -93,40 +93,40 @@
   }
 
   a:not(.btn) {
-    color: $blue;
+    color: var(--blue);
     transition: all ease-out .2s;
 
     &:hover,
     &:focus {
-      color: rgba($blue, .5);
+      color: rgba(var(--blue), .5);
     }
   }
 }
 
 .b-faq__search {
-  background: $gray-lighter;
-  color: $blue;
+  background: var(--gray-lighter);
+  color: var(--blue);
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     padding: 150px 0 75px;
   }
 
   &.m-padding-large {
     padding-bottom: 145px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       padding: 150px 0 250px;
     }
   }
 }
 
 .b-faq__searchfield {
-  font-size: $font-size-normal;
+  font-size: var(--font-size-normal);
   position: relative;
   overflow: hidden;
   max-width: 700px;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     margin: 20px 0 0;
   }
 
@@ -151,15 +151,15 @@
     border: none;
     padding: 0 0 0 64px;
     height: 64px;
-    background: $white;
+    background: var(--white);
     box-shadow: none !important;
     width: 100%;
-    color: $black;
+    color: var(--black);
     border-radius: 5px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       padding: 0 64px;
-      font-size: $font-size-normal;
+      font-size: var(--font-size-normal);
     }
 
     &.open {
@@ -171,7 +171,7 @@
     &:-moz-placeholder,
     &::-moz-placeholder,
     &:-ms-input-placeholder {
-      color: rgba($blue, .5);
+      color: rgba(var(--blue), .5);
       letter-spacing: -.1px;
     }
   }
@@ -208,13 +208,13 @@
 }
 
 .b-faq__table {
-  border: 1px solid $blue;
+  border: 1px solid var(--blue);
   line-height: 1.2;
 }
 
 .b-faq__table td {
   text-align: center;
-  border: 1px solid $blue;
+  border: 1px solid var(--blue);
   vertical-align: top;
   padding: 12px 5px;
   font-size: 13px;
@@ -236,8 +236,8 @@
 .b-faq__title {
   font-size: 30px;
 
-  @include respond-to('medium') {
-    font-size: $font-size-largest;
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-largest);
   }
 
   &.m-topic {
@@ -246,7 +246,7 @@
 }
 
 .b-faq__link {
-  font-family: $font-secondary;
+  font-family: var(--font-secondary);
 }
 
 .b-faq__categories {
@@ -258,7 +258,7 @@
   flex-wrap: wrap;
   text-align: center;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     margin: 16px -22px 16px 0;
   }
 
@@ -269,23 +269,23 @@
     padding: 18px 18px 0 0;
     display: flex;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       flex: 1 1 240px;
       max-width: 100%;
       min-width: 240px;
     }
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       z-index: 2;
     }
 
-    @include respond-to('large') {
+    @media (min-width: 1440px) {
       padding: 22px 22px 0 0;
     }
 
     A {
       display: block;
-      border: 2px solid $gray-lighter;
+      border: 2px solid var(--gray-lighter);
       padding: 20px 8px 8px;
       color: inherit;
       min-height: 118px;
@@ -294,8 +294,8 @@
 
       &:hover {
         text-decoration: none;
-        color: $blue;
-        border-color: $blue;
+        color: var(--blue);
+        border-color: var(--blue);
       }
 
       IMG {
@@ -306,8 +306,8 @@
         vertical-align: middle;
         height: 100%;
         font-weight: 700;
-        color: $blue;
-        font-size: $font-size-normal-plus;
+        color: var(--blue);
+        font-size: var(--font-size-normal-plus);
       }
     }
   }
@@ -324,7 +324,7 @@
 
   .b-faq__searchresult {
     display: block;
-    color: $blue-dark;
+    color: var(--blue)-dark;
     margin-bottom: 30px;
 
     &:hover {
@@ -341,16 +341,16 @@
       height: 20px;
       background: url(https://static.xolo.io/common/images/faq/ico-file.svg) no-repeat center;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         display: block;
       }
     }
 
     &-body {
-      font-size: $font-size-normal;
+      font-size: var(--font-size-normal);
       padding: 10px 0 20px;
-      line-height: $line-height-large;
-      border-bottom: 1px solid $gray;
+      line-height: var(--line-height-large);
+      border-bottom: 1px solid var(--gray);
     }
 
     &[data-product] {
@@ -376,7 +376,7 @@
       margin-bottom: 10px;
 
       A {
-        color: $blue;
+        color: var(--blue);
 
         &.locked:after {
           content: '';
@@ -391,7 +391,7 @@
     }
 
     P {
-      font-size: $font-size-normal;
+      font-size: var(--font-size-normal);
     }
   }
 
@@ -413,13 +413,13 @@
     display: flex;
 
     A {
-      color: $gray-darker;
+      color: var(--gray-darker);
     }
   }
 }
 
 .b-faq__body {
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     //@include span(16);
 
     h3:before,
@@ -444,14 +444,14 @@
   display: block;
   margin-bottom: 20px;
   font-size: 13px;
-  font-weight: $font-weight-normal;
-  color: $gray-darker;
+  font-weight: var(--font-weight-normal);
+  color: var(--gray-darker);
 }
 
 .b-faq__sidebar {
   display: none;
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     //@include span(6 at 19);
 
     display: block;
@@ -459,7 +459,7 @@
 }
 
 .b-faq__questions {
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     position: absolute;
     top: 0;
     width: 240px;
@@ -476,11 +476,11 @@
     }
   }
 
-  @include respond-to('large') {
+  @media (min-width: 1440px) {
     width: 288px;
   }
 
-  @include respond-to('large') {
+  @media (min-width: 1440px) {
     width: 312px;
   }
 }
@@ -488,8 +488,8 @@
 .b-faq__questions-title {
   @include font-smoothing;
 
-  color: $red;
-  font-size: $font-size-medium;
+  color: var(--red);
+  font-size: var(--font-size-medium);
   line-height: 1.4;
   margin: 18px 0;
 
@@ -497,7 +497,7 @@
     margin-top: 0;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     margin: 24px 0;
   }
 }
@@ -511,12 +511,12 @@
   @include font-smoothing;
 
   line-height: 1.3;
-  font-weight: $font-weight-medium;
+  font-weight: var(--font-weight-medium);
   list-style: none;
 }
 
 .b-faq__questions-item-link {
-  color: $blue;
+  color: var(--blue);
   display: block;
   padding: 6px 0;
 }
@@ -524,11 +524,11 @@
 .b-faq__highlight {
   margin-top: -160px;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     margin-top: -200px;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     margin-top: -280px;
   }
 }
@@ -538,8 +538,8 @@
   text-align: left;
   margin-top: 40px;
 
-  @include respond-to('medium') {
-    font-size: $font-size-small;
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-small);
   }
 
   SPAN {
@@ -547,7 +547,7 @@
   }
 
   A {
-    color: $blue;
+    color: var(--blue);
   }
 }
 
@@ -557,18 +557,18 @@ UL.b-faq__highlight-list {
 
   LI {
     flex: 1 1 100%;
-    background: $white;
+    background: var(--white);
     margin: 15px;
     padding: 0;
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.05);
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       flex: 1;
     }
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       min-height: 0;
     }
 
@@ -580,7 +580,7 @@ UL.b-faq__highlight-list {
       padding: 20px;
       transition: transform .3s ease-in-out;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         padding: 45px 55px;
       }
 
@@ -593,7 +593,7 @@ UL.b-faq__highlight-list {
     H3 {
       margin: 0 0 20px;
 
-      @include respond-to('small') {
+      @media (min-width: 768px) {
         margin: 0 0 10px;
       }
     }
@@ -602,7 +602,7 @@ UL.b-faq__highlight-list {
 
 .b-faq__ico-container {
   display: flex;
-  background: $gray-lighter;
+  background: var(--gray-lighter);
   width: 65px;
   height: 65px;
   margin-bottom: 20px;
@@ -613,16 +613,16 @@ UL.b-faq__highlight-list {
 
 .b-faq__leap-ico-container {
   @extend .b-faq__ico-container;
-  background: $blue;
+  background: var(--blue);
 }
 
 .b-faq__go-ico-container {
   @extend .b-faq__ico-container;
-  background: $red;
+  background: var(--red);
 }
 
 .b-faq__topics {
-  border-bottom: 1px solid $gray-lightest;
+  border-bottom: 1px solid var(--gray-lightest);
 
   .grid-text {
     > DIV {
@@ -650,7 +650,7 @@ UL.b-faq__highlight-list {
       text-decoration: none;
 
       H3 {
-        color: $blue;
+        color: var(--blue);
         transition: color .3s ease-in-out;
       }
     }
@@ -661,11 +661,11 @@ UL.b-faq__highlight-list {
       margin-top: 10px;
       height: 60px;
       align-items: center;
-      border-bottom: 1px solid $gray-lightest;
+      border-bottom: 1px solid var(--gray-lightest);
       background: url(https://static.xolo.io/common/images/faq/ico-arrow-blue.svg) no-repeat right;
       background-size: 20px 20px;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         display: none;
       }
     }
@@ -702,30 +702,30 @@ UL.b-faq__highlight-list {
   flex-wrap: wrap;
   width: 100%;
   padding: 30px 0;
-  border-top: 1px solid $gray-lightest;
+  border-top: 1px solid var(--gray-lightest);
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     flex-wrap: nowrap;
   }
 
   &:last-child {
-    border-bottom: 1px solid $gray-lightest;
+    border-bottom: 1px solid var(--gray-lightest);
   }
 
   H3 {
     flex-basis: 100%;
     margin: 0 0 40px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       flex: 1;
       margin: 0;
     }
 
     A {
-      color: $blue;
+      color: var(--blue);
 
       &:hover {
-        color: rgba($blue, .5);
+        color: rgba(var(--blue), .5);
         text-decoration: none;
       }
     }
@@ -737,12 +737,12 @@ UL.b-faq__highlight-list {
 
     LI {
       &.more {
-        font-size: $font-size-normal;
+        font-size: var(--font-size-normal);
         margin-bottom: 10px;
         padding-left: 45px;
       }
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         flex-basis: 100%;
       }
     }
@@ -753,8 +753,8 @@ UL.b-faq__highlight-list {
   UL {
     padding: 20px 0;
     margin: 0;
-    border-top: 1px solid $gray-lightest;
-    border-bottom: 1px solid $gray-lightest;
+    border-top: 1px solid var(--gray-lightest);
+    border-bottom: 1px solid var(--gray-lightest);
 
     LI {
       flex-basis: 100%;
@@ -765,7 +765,7 @@ UL.b-faq__highlight-list {
 
 .b-faq__article {
   H2 {
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       font-size: 48px;
       line-height: 52px;
       max-width: 75%;
@@ -780,7 +780,7 @@ UL.b-faq__highlight-list {
 }
 
 .b-faq__article-body {
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -799,11 +799,11 @@ UL.b-faq__highlight-list {
   }
 
   P {
-    color: $black;
+    color: var(--black);
     margin-bottom: 30px;
   }
 
-  @include respond-to('medium') {
+  @media (min-width: 1024px) {
     flex: 3;
     padding: 0 60px 50px 0;
   }
@@ -825,7 +825,7 @@ UL.b-faq__highlight-list {
         padding: 0 0 0 20px;
 
         LI:before {
-          background: $blue;
+          background: var(--blue);
           border-radius: 50%;
           width: 5px;
           height: 5px;
@@ -889,7 +889,7 @@ UL.b-faq__highlight-list {
 
     LI {
       padding: 15px 0;
-      border-bottom: 1px solid $gray-lightest;
+      border-bottom: 1px solid var(--gray-lightest);
     }
   }
 
@@ -900,7 +900,7 @@ UL.b-faq__highlight-list {
 
 .b-faq__article-extra {
   flex: 1 1 100%;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
   padding: 30px;
   border-radius: 3px;
   box-shadow: 0 8px 14px 0 #f1f1f1;
@@ -908,7 +908,7 @@ UL.b-faq__highlight-list {
   &.locked {
     position: relative;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       padding-right: 200px;
     }
 
@@ -926,14 +926,14 @@ UL.b-faq__highlight-list {
       background: url(https://static.xolo.io/common/images/faq/lock-big.svg) no-repeat;
       background-size: 100px 150px;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         opacity: 1;
       }
     }
   }
 
   P {
-    color: $gray-dark;
+    color: var(--gray-dark);
   }
 
   SPAN {
@@ -944,7 +944,7 @@ UL.b-faq__highlight-list {
     display: inline-block;
     margin-top: 20px;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       float: right;
       margin: 0;
     }
@@ -999,22 +999,22 @@ UL.b-faq__highlight-list {
 }
 
 .b-article__breadcrumb {
-  font-size: $font-size-tiny;
+  font-size: var(--font-size-tiny);
   padding: 0;
   margin: 0;
   list-style: none;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     display: flex;
   }
 }
 
 .b-article__breadcrumb-item {
   display: inline-block;
-  color: $blue;
+  color: var(--blue);
   padding: 5px 0;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     display: none;
     margin: auto 0;
 
@@ -1025,7 +1025,7 @@ UL.b-faq__highlight-list {
   }
 
   &.m-active {
-    color: $blue-dark;
+    color: var(--blue)-dark;
   }
 
   &:not(:first-child) {
@@ -1039,7 +1039,7 @@ UL.b-faq__highlight-list {
       background: url(https://static.xolo.io/common/images/faq/ico-arrow.svg) no-repeat center;
     }
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       position: relative;
       padding-left: 30px;
 
@@ -1055,14 +1055,14 @@ UL.b-faq__highlight-list {
   }
 
   a {
-    color: $blue;
+    color: var(--blue);
   }
 }
 
 .c-article-link,
 .ui-menu-item {
-  font-size: $font-size-normal;
-  line-height: $line-height-medium;
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-medium);
   padding-left: 30px;
 
   &:not(.ui-state-disabled):before {
@@ -1089,7 +1089,7 @@ UL.b-faq__highlight-list {
 
   &:hover,
   &:focus {
-    color: rgba($black, .5);
+    color: rgba(var(--black), .5);
     text-decoration: none;
   }
 }
@@ -1137,7 +1137,7 @@ UL.b-faq__highlight-list {
 
 .ui-widget {
   font-family: inherit;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 
   &.ui-widget-content {
     border: none;
@@ -1149,11 +1149,11 @@ UL.b-faq__highlight-list {
 }
 
 .ui-widget-content {
-  color: $black;
-  background: $white;
+  color: var(--black);
+  background: var(--white);
   padding: 15px 0;
   border: none;
-  border-top: 1px solid $gray-light;
+  border-top: 1px solid var(--gray-light);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.13);
@@ -1162,14 +1162,14 @@ UL.b-faq__highlight-list {
     border: none;
     background: none;
     font-weight: inherit;
-    color: $blue;
+    color: var(--blue);
     margin: 0;
   }
 }
 
 .ui-menu {
   .ui-menu-item {
-    font-size: $font-size-normal;
+    font-size: var(--font-size-normal);
     flex-basis: 100%;
     padding: 6px 64px;
 
@@ -1186,22 +1186,22 @@ UL.b-faq__highlight-list {
     display: flex;
     flex-direction: column;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       flex-direction: row;
     }
   }
 
   .link-more {
-    font-size: $font-size-normal;
+    font-size: var(--font-size-normal);
     padding: 15px 64px 20px;
     text-align: left;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       text-align: right;
     }
 
     A {
-      color: $blue-dark;
+      color: var(--blue)-dark;
     }
   }
 
@@ -1209,23 +1209,23 @@ UL.b-faq__highlight-list {
     padding: 15px 64px 25px;
 
     .filter {
-      color: $blue-dark;
+      color: var(--blue)-dark;
 
       &.active,
       &:focus,
       &:hover {
         cursor: pointer;
-        font-family: $font-tertiary;
+        font-family: var(--font-tertiary);
       }
     }
   }
 
   .product-type {
-    color: $gray-dark;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-tiniest;
+    color: var(--gray-dark);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-tiniest);
     padding: 6px 0 13px 0;
-    border-bottom: 1px solid rgba($gray-dark, .4);
+    border-bottom: 1px solid rgba(var(--gray-dark), .4);
   }
 
   LI {
@@ -1234,7 +1234,7 @@ UL.b-faq__highlight-list {
 }
 
 .filler {
-  background: $gray-light;
+  background: var(--gray-light);
 
   & + .filler {
     margin-top: 20px;

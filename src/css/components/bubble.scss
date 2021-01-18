@@ -1,8 +1,8 @@
 .bubble {
   display: flex;
-  font-family: $font-secondary;
-  color: $white;
-  background: $red;
+  font-family: var(--font-secondary);
+  color: var(--white);
+  background: var(--red);
   align-items: center;
   justify-content: center;
   width: 48px;
@@ -11,22 +11,22 @@
   border-radius: 50%;
 
   &.-active {
-    background: $blue !important;
-    color: $white !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
   }
 
   &.-gray {
-    background: $gray;
-    color: $blue-dark;
+    background: var(--gray);
+    color: var(--blue)-dark;
   }
 
   &.-blue {
-    background: $blue;
+    background: var(--blue);
     color: white;
   }
 
   &.-red {
-    background: $red;
+    background: var(--red);
     color: white;
   }
 
@@ -42,7 +42,7 @@
   }
 
   &-title {
-    font-family: $font-tertiary;
+    font-family: var(--font-tertiary);
     margin-bottom: 12px;
   }
 }

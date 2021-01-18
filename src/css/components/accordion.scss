@@ -17,9 +17,9 @@
 
   &-label {
     display: flex;
-    color: $blue;
-    font-family: $font-secondary;
-    font-size: $font-size-medium;
+    color: var(--blue);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-medium);
     line-height: 34px;
     padding: 24px 0;
     cursor: pointer;
@@ -27,13 +27,13 @@
 
     /* Icon */
     &:hover {
-      color: rgba($blue, .8);
+      color: rgba(var(--blue), .8);
     }
 
     &::after {
       content: "";
       background: url('#{$path-images}www/ico-chevron-red.svg') no-repeat center;
-      color: $red;
+      color: var(--red);
       width: 24px;
       height: 34px;
       margin-left: 40px;
@@ -51,7 +51,7 @@
   }
 
   &-content {
-    color: $blue-dark;
+    color: var(--blue)-dark;
     max-height: 0;
     padding: 0;
     opacity: 0;
@@ -69,11 +69,11 @@
     justify-content: flex-end;
     padding: 1em;
     font-size: 0.75em;
-    background: $blue;
+    background: var(--blue);
     cursor: pointer;
 
     &:hover {
-      background: darken($blue, 10%);
+      background: darken(var(--blue), 10%);
     }
   }
 
@@ -120,7 +120,7 @@
         transition: opacity 0.3s ease-in;
         height: auto;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           padding: 0;
           height: 100%;
         }
@@ -133,7 +133,7 @@
   .accordion {
     &-label {
       display: block;
-      font-size: $font-size-normal-plus;
+      font-size: var(--font-size-normal-plus);
       padding: 0;
 
       &:after {
@@ -142,13 +142,13 @@
     }
 
     &-content {
-      font-size: $font-size-normal;
+      font-size: var(--font-size-normal);
       transition: all .4s;
       opacity: 1;
       transform: none;
       max-height: 100%;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         opacity: 0;
         transform: translateY(80px);
       }
@@ -158,7 +158,7 @@
         max-height: 100%;
         margin-bottom: 24px;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           height: 0;
           margin-bottom: 0;
         }
@@ -171,7 +171,7 @@
       cursor: pointer;
       border: none;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         padding: 8px 32px 8px 32px;
 
         &:before,
@@ -186,11 +186,11 @@
       }
 
       &:before {
-        background: $gray;
+        background: var(--gray);
       }
 
       &:after {
-        background: $red;
+        background: var(--red);
       }
 
       &-active {
@@ -206,7 +206,7 @@
         .accordion-label {
           &:hover,
           &:focus {
-            color: $blue;
+            color: var(--blue);
           }
         }
       }
@@ -214,7 +214,7 @@
       input:checked {
 
         ~ .accordion-label {
-          font-family: $font-tertiary;
+          font-family: var(--font-tertiary);
         }
 
         ~ .accordion-content {
@@ -231,7 +231,7 @@
             margin-bottom: 24px;
           }
 
-          @include respond-to('medium') {
+          @media (min-width: 1024px) {
             transform: translateY(8px);
 
             > * {
@@ -244,7 +244,7 @@
             }
           }
 
-          @include respond-to('semi-large') {
+          @media (min-width: 1366px) {
             > p {
               margin-bottom: 16px;
             }
@@ -258,19 +258,19 @@
     display: block;
     overflow: visible;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       display: flex;
     }
 
     .column {
       padding-right: 0;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         padding-right: 40px;
         flex-direction: row;
       }
 
-      @include respond-to('semi-large') {
+      @media (min-width: 1366px) {
         padding-right: 56px;
       }
     }
@@ -281,7 +281,7 @@
       overflow: visible;
       border: none;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         padding: 0 0 32px 0;
       }
 
@@ -293,18 +293,18 @@
         bottom: 0;
         height: 2px;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           content: '';
         }
       }
 
       &:before {
-        background: $gray;
+        background: var(--gray);
         width: 100%;
       }
 
       &:after {
-        background: $blue;
+        background: var(--blue);
         width: 0;
         transition: all 0.5s;
       }
@@ -315,7 +315,7 @@
         transition: all .5s;
         display: none;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           display: block;
         }
       }
@@ -336,7 +336,7 @@
         transition: all .5s;
         transform: none;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           position: absolute;
           transform: translateY(80px);
         }
@@ -347,7 +347,7 @@
         max-height: none;
         transform: none;
 
-        @include respond-to('medium') {
+        @media (min-width: 1024px) {
           opacity: 0;
           transform: translateY(48px);
           max-height: 100%;
@@ -364,7 +364,7 @@
           position: relative;
           transform: none;
 
-          @include respond-to('medium') {
+          @media (min-width: 1024px) {
             position: absolute;
             transform: translateY(-36px);
           }

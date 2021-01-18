@@ -1,17 +1,18 @@
+
 .mobile-hide {
-  @media only screen and (max-width: map-get($breakpoints, 'small')) {
+  @media only screen and (max-width: 768px) {
     display: none !important;
   }
 }
 
 .tablet-hide {
-  @media only screen and (max-width: map-get($breakpoints, 'medium') - 1) {
+  @media only screen and (max-width: 1023px) {
     display: none !important;
   }
 }
 
 .desktop-hide {
-  @media only screen and (min-width: map-get($breakpoints, 'medium')) {
+  @media only screen and (min-width: 1024px) {
     display: none !important;
   }
 }
@@ -23,7 +24,7 @@
 .text-right {
   text-align: left;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     text-align: right;
   }
 }
@@ -47,7 +48,7 @@
   align-items: center;
 }
 
-@include respond-to('small') {
+@media (min-width: 768px) {
   .flex-sm-align-center {
     display: flex;
     align-items: center;
@@ -172,11 +173,11 @@ $breakpoint-shortnames: (
 }
 
 .border {
-  border: 1px solid $gray-lightest;
+  border: 1px solid var(--gray-lightest);
 }
 
 @each $side in $sides {
   .border-#{str-slice($side, 0, 1)} {
-    border-#{$side}: 1px solid $gray-lightest;
+    border-#{$side}: 1px solid var(--gray-lightest);
   }
 }

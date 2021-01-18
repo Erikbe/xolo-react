@@ -37,21 +37,21 @@ ol {
         content: counter(item);
         display: flex;
         position: absolute;
-        font-family: $font-tertiary;
-        color: $black;
+        font-family: var(--font-tertiary);
+        color: var(--black);
         align-items: center;
         justify-content: center;
         top: 0;
         left: 0;
         width: 48px;
         height: 48px;
-        background: $gray-dark;
+        background: var(--gray-dark);
         border-radius: 50%;
       }
 
       &.list-bubble-pink {
         &:before {
-          background: $pink-dark;
+          background: var(--pink-dark);
         }
       }
     }
@@ -68,8 +68,8 @@ ul {
   }
 
   &.list-check {
-    color: $blue-dark;
-    line-height: $line-height-larger;
+    color: var(--blue-dark);
+    line-height: var(--line-height-larger);
 
     & > li {
       position: relative;
@@ -97,12 +97,12 @@ ul {
 
   &.box-list {
     margin: 25px 0;
-    line-height: $line-height-larger;
+    line-height: var(--line-height-larger);
 
     & > li {
       position: relative;
       padding: 15px 0 15px 26px;
-      color: $blue-dark;
+      color: var(--blue-dark);
 
       &:before {
         content: "";
@@ -111,18 +111,18 @@ ul {
         left: 0;
         width: 10px;
         height: 10px;
-        background: $red;
+        background: var(--red);
       }
 
       a {
-        color: $red;
+        color: var(--red);
         padding-bottom: 3px;
-        border-bottom: 1px solid $pink;
+        border-bottom: 1px solid var(--pink);
 
         &:hover,
         &:focus {
-          color: rgba($red, .5);
-          border-bottom-color: rgba($pink, .5);
+          color: rgba(var(--red), .5);
+          border-bottom-color: rgba(var(--pink), .5);
         }
       }
     }

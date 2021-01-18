@@ -12,19 +12,19 @@
   }
 
   &-title {
-    color: $blue;
-    font-family: $font-tertiary;
-    font-weight: $font-weight-bold;
+    color: var(--blue);
+    font-family: var(--font-tertiary);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 12px;
   }
 
   &-body {
-    color: $gray-darker;
+    color: var(--gray)-darker;
   }
 
   &-text {
-    font-size: $font-size-small;
-    line-height: $line-height-large;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-large);
   }
 
   &.iconbox-top {
@@ -59,23 +59,23 @@
     }
 
     &-red:after {
-      background: $red;
+      background: var(--red);
     }
 
     &-blue:after {
-      background: $blue;
+      background: var(--blue);
     }
 
     &-pink:after {
-      background: $pink;
+      background: var(--pink);
     }
 
     &-gray:after {
-      background: $gray;
+      background: var(--gray);
     }
 
     &-white:after {
-      background: $white;
+      background: var(--white);
     }
   }
 
@@ -105,7 +105,7 @@
     margin-bottom: 28px;
     width: 100%;
 
-    @include respond-to('medium') {
+    @media (min-width: 1024px) {
       justify-content: flex-end;
     }
 
@@ -126,7 +126,7 @@
     }
   }
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     flex-wrap: nowrap;
     justify-content: space-between;
 
@@ -147,7 +147,7 @@
   }
 
   &.-wide {
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       .iconbox {
         width: 100%;
       }

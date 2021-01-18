@@ -13,4 +13,12 @@ function Iconbox(props) {
     );
 }
 
-export default Iconbox;
+function IconboxRow(props) {
+    return (
+        <div className='iconbox-row'>
+            {props.children}
+        </div>
+    );
+}
+
+export { Iconbox, IconboxRow } ;

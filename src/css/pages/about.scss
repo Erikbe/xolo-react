@@ -3,18 +3,18 @@
     z-index: 1;
 
     h1, p {
-      color: $blue;
+      color: var(--blue);
 
-      @include respond-to('small') {
-        color: $white;
+      @media (min-width: 768px) {
+        color: var(--white);
       }
     }
 
     p {
-      font-size: $font-size-normal-plus;
+      font-size: var(--font-size-normal-plus);
 
-      @include respond-to('medium') {
-        font-size: $font-size-medium;
+      @media (min-width: 1024px) {
+        font-size: var(--font-size-medium);
       }
     }
   }
@@ -23,18 +23,18 @@
 .section-about-1 {
   padding-top: 0;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     padding-top: 120px;
   }
 }
 
 .section-about-2 {
-  @include respond-to('large') {
+  @media (min-width: 1440px) {
     margin-top: 40px;
   }
 
   .link-more {
-    color: $blue;
+    color: var(--blue);
   }
 }
 
@@ -53,7 +53,7 @@
     .column {
       flex-direction: column;
 
-      @include respond-to('medium') {
+      @media (min-width: 1024px) {
         flex-direction: row;
 
         > div {
@@ -72,13 +72,13 @@
   .column:first-child {
     margin: 0 0 32px 0;
 
-    @include respond-to('small') {
+    @media (min-width: 768px) {
       margin: 0 96px 0 0;
     }
   }
   .link-more {
-    color: $blue;
-    font-size: $font-size-small;
+    color: var(--blue);
+    font-size: var(--font-size-small);
   }
 }
 
@@ -86,7 +86,7 @@
 .section-about-5 {
   visibility: hidden;
 
-  @include respond-to('small') {
+  @media (min-width: 768px) {
     visibility: visible;
   }
 }
@@ -109,7 +109,7 @@
           align-items: flex-start;
           margin: 32px 32px 0 0;
 
-          @include respond-to('medium') {
+          @media (min-width: 1024px) {
             flex: 1;
           }
         }
