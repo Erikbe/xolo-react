@@ -1,0 +1,110 @@
+.plans {
+  grid-column: start / end;
+
+  @include respond-to('small') {
+    grid-column: wrapper-start / wrapper-end;
+  }
+
+  @include respond-to('medium') {
+    display: none;
+  }
+}
+
+.plan {
+  position: relative;
+  padding: 24px 124px 24px 24px;
+  border-bottom: 1px solid $gray-lightest;
+
+  &-name,
+  &-price {
+    font-family: $font-tertiary;
+    font-size: $font-size-medium;
+    line-height: $line-height-large;
+  }
+
+  &-description {
+    color: $gray-darker;
+    font-size: $font-size-tiniest;
+    line-height: $line-height-larger;
+    margin: 0 0 16px;
+  }
+
+  &-price {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    text-align: right;
+  }
+
+  &-price-extra {
+    color: $gray-darker;
+    font-family: $font-primary;
+    font-size: $font-size-tiniest;
+    line-height: $line-height-normal;
+  }
+
+  &-highlighted {
+    background-color: $gray-bg;
+  }
+
+  &-discount {
+    font-size: $font-size-tiniest;
+    padding: 0 24px;
+    height: 32px;
+    line-height: 32px;
+    color: $white;
+    background: $red;
+    text-transform: uppercase;
+    border-bottom: 1px solid $gray-lightest;
+  }
+}
+
+.payment-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0;
+  grid-column: start / end;
+
+  @include respond-to('medium') {
+    grid-row: 1;
+    flex-direction: row;
+    grid-column: wrapper-start / wrapper-end;
+    margin: 0;
+  }
+
+  &-switch {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+
+    @include respond-to('medium') {
+      padding: 0;
+    }
+  }
+
+  &-label {
+    font-size: $font-size-tiny;
+    transition: color .25s ease-in;
+
+    &:not(.active) {
+      color: $gray-darker;
+    }
+
+    &:first-child {
+      padding-right: 14px;
+    }
+
+    &:last-child {
+      padding-left: 16px;
+    }
+  }
+
+  &-extra {
+    font-size: $font-size-tiniest;
+
+    @include respond-to('medium') {
+      margin-left: 24px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.help-block {
+  &.emailTab,
+  &.idcard,
+  &.smartid {
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
+
+.confirmation-code {
+  font-size: $font-size-largest;
+  letter-spacing: 1rem;
+  margin-bottom: 24px;
+}
+
+.loader-bounce {
+  margin: 60px 0;
+  width: 90px;
+
+  &.m-thin {
+    margin: 20px auto;
+  }
+
+  > div {
+    margin: 0 3px;
+    width: 20px;
+    height: 20px;
+    background-color: $blue;
+    border-radius: 100% !important;
+    display: inline-block;
+
+    animation: loader-bounce 1.4s ease-in-out 0s infinite both;
+  }
+
+  .bounce1 {
+    animation-delay: -0.32s;
+  }
+
+  .bounce2 {
+    animation-delay: -0.16s;
+  }
+}
+
+@keyframes loader-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
+  }
+}

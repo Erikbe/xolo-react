@@ -1,0 +1,254 @@
+input {
+  font-size: $font-size-normal-plus;
+  color: $blue;
+  -webkit-appearance: none;
+  width: 100%;
+  background: none;
+  border: 1px solid rgba($gray-dark, .6);
+  padding: 15px 24px;
+  line-height: 32px;
+  transition: border 400ms ease-out;
+  border-radius: 0;
+
+  &::placeholder {
+    color: $blue;
+    transition: color 400ms ease-out;
+  }
+
+  &:read-only {
+    background: $gray-light;
+    color: $gray-darker;
+
+    &:focus,
+    &:hover {
+      border-color: $gray-dark;
+    }
+  }
+
+  &:hover {
+    border-color: $blue;
+  }
+
+  &:focus {
+    border-color: $blue;
+
+    &::placeholder {
+      color: rgba($blue, .1);
+    }
+  }
+
+  &.input-light {
+    color: $white;
+    border-color: rgba($gray-dark, .5);
+
+    &::placeholder {
+      color: $white;
+    }
+
+    &:hover {
+      border-color: $gray-dark;
+    }
+
+    &:focus {
+      border-color: $gray-dark;
+
+      &::placeholder {
+        color: rgba($white, .3);
+      }
+    }
+  }
+}
+
+label {
+  &.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+input,
+.checkmark,
+.input-group-selector {
+
+  &.error {
+    border: 1px solid $red;
+
+    &:hover {
+      border-color: $red;
+    }
+  }
+}
+
+
+.input-group {
+  position: relative;
+
+  .input {
+    padding-right: 80px;
+  }
+
+  & > .btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 10px 28px 12px;
+
+    &.btn-forward {
+      width: 68px;
+    }
+
+    @media only screen and (max-width: map-get($breakpoints, 'medium')) {
+      font-size: 0;
+      width: 68px;
+      height: 48px;
+      border-radius: 100px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        background: url('#{$path-images}www/ico-arrow-right-white.svg') no-repeat;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 14px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-name {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+
+    @include respond-to('small') {
+      flex-basis: 50%;
+      margin-bottom: 20px;
+
+      &:nth-child(1) {
+        padding-right: 20px;
+      }
+
+      &-email {
+        margin: 30px;
+      }
+    }
+  }
+
+  &-ref,
+  &-email,
+  &-code,
+  &-choice,
+  &-location,
+  &-selector,
+  &-checkbox {
+    margin-bottom: 32px;
+    flex-basis: 100%;
+  }
+
+  &-checkbox {
+    margin: 10px 0;
+  }
+
+  &-choice {
+    display: block;
+
+    select:disabled,
+    .select2-container--disabled{
+      background: $gray-light !important;
+
+      &::placeholder {
+        color: rgba( $gray-darker, .4 );
+      }
+    }
+
+    select:enabled {
+      border: 1px solid $gray-dark;
+    }
+  }
+
+  &-selector {
+    .select2 {
+      width: 100% !important;
+
+      *:focus {
+        outline: none;
+      }
+
+      .selection {
+        .select2-selection--single {
+          height: 70px;
+          border-radius: 0;
+          border: 1px solid $gray-dark;
+
+          .select2-selection__rendered {
+            padding: 18px 20px;
+            line-height: 32px;
+            color: $blue;
+
+            .select2-selection__placeholder {
+              color: rgba( $gray-darker, .6 );
+            }
+          }
+
+          .select2-selection__arrow {
+            display: none;
+          }
+        }
+
+        .select2-selection--single[aria-expanded="true"] {
+          background: url('#{$path-images}www/ico-arrow-up-darkblue.svg') no-repeat;
+          background-size: 30px;
+          background-position: right 25px center;
+        }
+
+        .select2-selection--single[aria-expanded="false"] {
+          background: url('#{$path-images}www/ico-arrow-down-darkblue.svg') no-repeat;
+          background-size: 30px;
+          background-position: right 25px center;
+        }
+      }
+    }
+  }
+}
+
+.select2-container {
+  .select2-dropdown {
+    .select2-results {
+      .select2-results__options {
+        max-height: 400px;
+
+        .select2-results__option {
+          padding: 20px 0 20px 18px;
+
+          &:hover {
+            background-color: $blue;
+          }
+        }
+
+        .select2-results__option--highlighted {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}
+
+select {
+  &.error {
+    + {
+      .select2-container--default .select2-selection--single {
+        border-color: $red !important;
+      }
+    }
+  }
+}
+
+
+
+

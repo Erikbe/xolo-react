@@ -1,0 +1,57 @@
+.page-full-screen {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding: 0;
+    height: auto;
+    max-width: none;
+
+    @include respond-to('small') {
+      height: 100vh;
+    }
+
+    @include respond-to('medium') {
+      display: grid;
+      margin-top: 0;
+    }
+  }
+
+  .grid-text {
+    @include respond-to('small') {
+      padding: 48px;
+    }
+
+    @include respond-to('medium') {
+      padding: 74px 0;
+    }
+  }
+
+  .section-signup-title {
+    @media screen and (max-width: 1220px) and (min-width: 1024px) {
+      h2 {
+        font-size: 44px;
+      }
+    }
+  }
+
+  .grid-media {
+    img {
+      max-width: 75%;
+      width: inherit;
+      margin: auto 0 0 auto;
+    }
+
+    @media (max-height: 800px) {
+      .help-block {
+        padding-top: 100px;
+      }
+    }
+  }
+
+  @include respond-to('small') {
+    .list-tabs {
+      min-width: 480px;
+    }
+  }
+}

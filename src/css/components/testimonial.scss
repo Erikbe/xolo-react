@@ -1,0 +1,67 @@
+.testimonial {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: $blue;
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  padding: 0 0 calc(27px + 2rem);
+  min-height: 170px;
+
+  &-body {
+    max-width: 600px;
+  }
+
+  &-image {
+    margin: 0 0 2rem;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 27px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: url('#{$path-images}www/quote-red.svg') no-repeat;
+  }
+
+  @include respond-to('medium') {
+    &-fluid {
+      text-align: left;
+      flex-direction: row;
+      padding: 0 0 0 170px;
+
+      &:before {
+        right: 0;
+        left: auto;
+        transform: none;
+      }
+
+      .testimonial-image {
+        position: absolute;
+        margin: 0;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &.small {
+    font-size: $font-size-medium;
+
+    @include respond-to('medium') {
+      font-size: 28px;
+    }
+  }
+}
+

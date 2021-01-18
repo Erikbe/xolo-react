@@ -1,0 +1,18 @@
+// This is required for portal project in production environment. This does not work for portal-ui test environment (because css folder is inside assets folder, but images is at the root level). A possible fix would be to move the images folder also into the assets folder.
+$path-images: '../../images/';
+
+/* Plugins */
+// @import "node_modules/select2/src/scss/core";
+// @import "node_modules/iframe-lightbox/css/iframe-lightbox";
+// @import "node_modules/slick-carousel/slick/slick.scss";
+
+/* Custom styles */
+@import 'base/__';
+
+@import 'blocks/__';
+
+@import 'components/button';
+@import 'components/iconbox';
+@import 'components/link';
+@import 'components/list';
+// @import 'pages/_';

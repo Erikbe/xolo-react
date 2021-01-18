@@ -1,0 +1,58 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+blockquote {
+    margin: 0;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+input,
+select,
+textarea,
+button,
+a {
+    &:focus {
+        outline: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+figure {
+  margin: 0;
+}

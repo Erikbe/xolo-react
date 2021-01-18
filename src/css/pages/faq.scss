@@ -1,0 +1,1242 @@
+.page-faq {
+  @include respond-to('medium') {
+    .section-container {
+      max-width: 1205px;
+      justify-content: flex-start;
+    }
+  }
+
+  @include respond-to('large') {
+    .section-body {
+      padding: 0;
+    }
+  }
+
+  H2 {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    margin: 0 0 20px;
+
+    @include respond-to('medium') {
+      font-size: 30px;
+    }
+
+    @include respond-to('large') {
+      font-size: $font-size-larger;
+    }
+
+    &.locked {
+      .c-tooltip {
+        display: none;
+        width: 24px;
+        margin-bottom: -1px;
+
+        @include respond-to('small') {
+          width: 20px;
+          height: 20px;
+          background-size: 20px 20px;
+        }
+
+        @include respond-to('large') {
+          height: 30px;
+        }
+      }
+
+      .c-tooltip,
+      .c-tooltip:hover {
+        background-image: url(https://static.xolo.io/common/images/faq/lock.svg)
+      }
+
+      .c-tooltip__text-wrap {
+        right: initial;
+        padding-left: 0;
+      }
+
+      .c-tooltip__text {
+        background: $black;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  H3 {
+    color: $blue;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    margin: 0 0 10px;
+  }
+
+  P {
+    color: $gray-darker;
+    font-size: $font-size-normal-plus;
+    line-height: $line-height-larger;
+    margin: 0;
+  }
+
+  UL {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: -15px;
+    list-style: none;
+
+    @include respond-to('small') {
+      flex-direction: row;
+    }
+
+    LI {
+      display: flex;
+      flex: 0 0 50%;
+      padding: 15px;
+    }
+  }
+
+  a:not(.btn) {
+    color: $blue;
+    transition: all ease-out .2s;
+
+    &:hover,
+    &:focus {
+      color: rgba($blue, .5);
+    }
+  }
+}
+
+.b-faq__search {
+  background: $gray-lighter;
+  color: $blue;
+
+  @include respond-to('medium') {
+    padding: 150px 0 75px;
+  }
+
+  &.m-padding-large {
+    padding-bottom: 145px;
+
+    @include respond-to('medium') {
+      padding: 150px 0 250px;
+    }
+  }
+}
+
+.b-faq__searchfield {
+  font-size: $font-size-normal;
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+
+  @include respond-to('small') {
+    margin: 20px 0 0;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+    background: url('https://static.xolo.io/common/images/faq/ico-magnifier.svg') 50% 50% no-repeat;
+    background-size: 20px 20px;
+  }
+
+  &:focus {
+    &:before {
+      background: url('https://static.xolo.io/common/images/faq/ico-magnifier-blue.svg') 50% 50% no-repeat;
+    }
+  }
+
+  INPUT[type="text"] {
+    border: none;
+    padding: 0 0 0 64px;
+    height: 64px;
+    background: $white;
+    box-shadow: none !important;
+    width: 100%;
+    color: $black;
+    border-radius: 5px;
+
+    @include respond-to('medium') {
+      padding: 0 64px;
+      font-size: $font-size-normal;
+    }
+
+    &.open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &::-webkit-input-placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+      color: rgba($blue, .5);
+      letter-spacing: -.1px;
+    }
+  }
+
+  BUTTON,
+  INPUT[type="submit"] {
+    border: none;
+    padding: 0;
+    height: 64px;
+    width: 64px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    text-indent: 64px;
+    line-height: 64px;
+  }
+
+  P {
+    margin: 0;
+  }
+}
+
+.b-faq__group {
+  display: block;
+  position: relative;
+  margin-bottom: 48px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.b-faq__table {
+  border: 1px solid $blue;
+  line-height: 1.2;
+}
+
+.b-faq__table td {
+  text-align: center;
+  border: 1px solid $blue;
+  vertical-align: top;
+  padding: 12px 5px;
+  font-size: 13px;
+}
+
+.b-faq__table td img {
+  vertical-align: middle;
+}
+
+.b-faq__table td:first-child {
+  text-align: left;
+  width: 16%;
+}
+
+.b-faq__table tr:first-child td {
+  vertical-align: middle;
+}
+
+.b-faq__title {
+  font-size: 30px;
+
+  @include respond-to('medium') {
+    font-size: $font-size-largest;
+  }
+
+  &.m-topic {
+    margin-top: 18px;
+  }
+}
+
+.b-faq__link {
+  font-family: $font-secondary;
+}
+
+.b-faq__categories {
+  padding: 0;
+  margin: 16px -18px 16px 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+
+  @include respond-to('medium') {
+    margin: 16px -22px 16px 0;
+  }
+
+  > LI {
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    padding: 18px 18px 0 0;
+    display: flex;
+
+    @include respond-to('small') {
+      flex: 1 1 240px;
+      max-width: 100%;
+      min-width: 240px;
+    }
+
+    @include respond-to('medium') {
+      z-index: 2;
+    }
+
+    @include respond-to('large') {
+      padding: 22px 22px 0 0;
+    }
+
+    A {
+      display: block;
+      border: 2px solid $gray-lighter;
+      padding: 20px 8px 8px;
+      color: inherit;
+      min-height: 118px;
+      min-width: 100%;
+      transition: all 150ms ease-in-out 0ms;
+
+      &:hover {
+        text-decoration: none;
+        color: $blue;
+        border-color: $blue;
+      }
+
+      IMG {
+        margin-right: 5px;
+      }
+
+      DIV {
+        vertical-align: middle;
+        height: 100%;
+        font-weight: 700;
+        color: $blue;
+        font-size: $font-size-normal-plus;
+      }
+    }
+  }
+}
+
+.b-faq__results {
+  H3 {
+    margin-bottom: 40px;
+  }
+}
+
+.b-faq__searchresults {
+  line-height: 1.7;
+
+  .b-faq__searchresult {
+    display: block;
+    color: $blue-dark;
+    margin-bottom: 30px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: none;
+      margin-left: -39px;
+      margin-top: 3px;
+      width: 14px;
+      height: 20px;
+      background: url(https://static.xolo.io/common/images/faq/ico-file.svg) no-repeat center;
+
+      @include respond-to('small') {
+        display: block;
+      }
+    }
+
+    &-body {
+      font-size: $font-size-normal;
+      padding: 10px 0 20px;
+      line-height: $line-height-large;
+      border-bottom: 1px solid $gray;
+    }
+
+    &[data-product] {
+      position: relative;
+      padding-left: 26px;
+    }
+
+    &[data-product="xolo-go"]:before {
+      background-image: url(https://static.xolo.io/common/images/faq/ico-page-red.svg);
+      background-size: contain;
+    }
+
+    &[data-product="xolo-leap"]:before {
+      background-image: url(https://static.xolo.io/common/images/faq/ico-page-blue.svg);
+      background-size: contain;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    H3 {
+      margin-bottom: 10px;
+
+      A {
+        color: $blue;
+
+        &.locked:after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          margin-left: 5px;
+          background: url(https://static.xolo.io/common/images/faq/lock.svg) no-repeat;
+          background-size: 12px 12px;
+        }
+      }
+    }
+
+    P {
+      font-size: $font-size-normal;
+    }
+  }
+
+  .xolo-leap:before {
+    background-image: url(https://static.xolo.io/common/images/faq/ico-page-blue.svg);
+    background-size: contain;
+  }
+
+  .xolo-go:before {
+    background-image: url(https://static.xolo.io/common/images/faq/ico-page-red.svg);
+    background-size: contain;
+  }
+
+  .b-faq__load-more {
+    padding-left: 26px;
+  }
+
+  .b-faq_topics {
+    display: flex;
+
+    A {
+      color: $gray-darker;
+    }
+  }
+}
+
+.b-faq__body {
+  @include respond-to('medium') {
+    //@include span(16);
+
+    h3:before,
+    h4:before {
+      display: block;
+      content: " ";
+      margin-top: -120px;
+      height: 120px;
+      width: 0;
+      visibility: hidden;
+    }
+  }
+
+  .b-content {
+    h4 {
+      margin: 34px 0 18px;
+    }
+  }
+}
+
+.b-faq__meta {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: $font-weight-normal;
+  color: $gray-darker;
+}
+
+.b-faq__sidebar {
+  display: none;
+
+  @include respond-to('medium') {
+    //@include span(6 at 19);
+
+    display: block;
+  }
+}
+
+.b-faq__questions {
+  @include respond-to('medium') {
+    position: absolute;
+    top: 0;
+    width: 240px;
+    margin-bottom: 10px;
+
+    &.m-fixed {
+      position: fixed;
+      top: 130px;
+    }
+
+    &.m-bottom {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  @include respond-to('large') {
+    width: 288px;
+  }
+
+  @include respond-to('large') {
+    width: 312px;
+  }
+}
+
+.b-faq__questions-title {
+  @include font-smoothing;
+
+  color: $red;
+  font-size: $font-size-medium;
+  line-height: 1.4;
+  margin: 18px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include respond-to('medium') {
+    margin: 24px 0;
+  }
+}
+
+.b-faq__questions-list {
+  margin: 0;
+  padding: 0;
+}
+
+.b-faq__questions-item {
+  @include font-smoothing;
+
+  line-height: 1.3;
+  font-weight: $font-weight-medium;
+  list-style: none;
+}
+
+.b-faq__questions-item-link {
+  color: $blue;
+  display: block;
+  padding: 6px 0;
+}
+
+.b-faq__highlight {
+  margin-top: -160px;
+
+  @include respond-to('small') {
+    margin-top: -200px;
+  }
+
+  @include respond-to('medium') {
+    margin-top: -280px;
+  }
+}
+
+.b-faq__popular {
+  font-size: 13px;
+  text-align: left;
+  margin-top: 40px;
+
+  @include respond-to('medium') {
+    font-size: $font-size-small;
+  }
+
+  SPAN {
+    padding: 0 5px;
+  }
+
+  A {
+    color: $blue;
+  }
+}
+
+UL.b-faq__highlight-list {
+  flex-direction: row;
+  text-align: center;
+
+  LI {
+    flex: 1 1 100%;
+    background: $white;
+    margin: 15px;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.05);
+
+    @include respond-to('medium') {
+      flex: 1;
+    }
+
+    @include respond-to('small') {
+      min-height: 0;
+    }
+
+    A {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100%;
+      padding: 20px;
+      transition: transform .3s ease-in-out;
+
+      @include respond-to('small') {
+        padding: 45px 55px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        transform: translateY(-3px);
+      }
+    }
+
+    H3 {
+      margin: 0 0 20px;
+
+      @include respond-to('small') {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+
+.b-faq__ico-container {
+  display: flex;
+  background: $gray-lighter;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-faq__leap-ico-container {
+  @extend .b-faq__ico-container;
+  background: $blue;
+}
+
+.b-faq__go-ico-container {
+  @extend .b-faq__ico-container;
+  background: $red;
+}
+
+.b-faq__topics {
+  border-bottom: 1px solid $gray-lightest;
+
+  .grid-text {
+    > DIV {
+      display: flex;
+      justify-content: center;
+      padding: 60px 0 0;
+    }
+  }
+}
+
+.b-faq__topics-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: -15px;
+  margin-bottom: 30px;
+  list-style: none;
+
+  A {
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      text-decoration: none;
+
+      H3 {
+        color: $blue;
+        transition: color .3s ease-in-out;
+      }
+    }
+
+    &:after {
+      content: 'See articles';
+      display: flex;
+      margin-top: 10px;
+      height: 60px;
+      align-items: center;
+      border-bottom: 1px solid $gray-lightest;
+      background: url(https://static.xolo.io/common/images/faq/ico-arrow-blue.svg) no-repeat right;
+      background-size: 20px 20px;
+
+      @include respond-to('medium') {
+        display: none;
+      }
+    }
+  }
+}
+
+.b-faq__featured {
+  H3 {
+    margin: 0 0 30px;
+  }
+}
+
+.b-faq__featured-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: -15px;
+  list-style: none;
+}
+
+.b-faq__category {
+  H2 {
+    margin-bottom: 20px;
+  }
+
+  P {
+    margin-bottom: 30px;
+  }
+}
+
+.b-faq__categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid $gray-lightest;
+
+  @include respond-to('medium') {
+    flex-wrap: nowrap;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $gray-lightest;
+  }
+
+  H3 {
+    flex-basis: 100%;
+    margin: 0 0 40px;
+
+    @include respond-to('medium') {
+      flex: 1;
+      margin: 0;
+    }
+
+    A {
+      color: $blue;
+
+      &:hover {
+        color: rgba($blue, .5);
+        text-decoration: none;
+      }
+    }
+  }
+
+  UL {
+    display: block;
+    flex: 2;
+
+    LI {
+      &.more {
+        font-size: $font-size-normal;
+        margin-bottom: 10px;
+        padding-left: 45px;
+      }
+
+      @include respond-to('medium') {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.b-faq__subcategories-list {
+  UL {
+    padding: 20px 0;
+    margin: 0;
+    border-top: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
+
+    LI {
+      flex-basis: 100%;
+      padding: 15px 0;
+    }
+  }
+}
+
+.b-faq__article {
+  H2 {
+    @include respond-to('medium') {
+      font-size: 48px;
+      line-height: 52px;
+      max-width: 75%;
+      padding-right: 60px;
+      margin-bottom: 40px;
+    }
+
+    &.locked {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.b-faq__article-body {
+  @include respond-to('medium') {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ghq-card-content__table-scroller {
+    overflow-x: auto;
+  }
+}
+
+.b-faq__article-text {
+  flex: 1 1 100%;
+  padding: 0 0 40px;
+
+  img {
+    width: 100% !important;
+  }
+
+  P {
+    color: $black;
+    margin-bottom: 30px;
+  }
+
+  @include respond-to('medium') {
+    flex: 3;
+    padding: 0 60px 50px 0;
+  }
+
+  UL {
+    margin: 24px 0 36px 12px;
+    padding: 0;
+
+    LI {
+      display: block;
+      flex: 1 1 100%;
+      list-style: none;
+      position: relative;
+      padding: 0 0 0 30px;
+      margin-bottom: 15px;
+
+      UL {
+        margin: 15px 0 5px;
+        padding: 0 0 0 20px;
+
+        LI:before {
+          background: $blue;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          left: -20px;
+          top: 10px;
+        }
+      }
+
+      P {
+        margin: 0;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: url('#{$path-images}www/icon-checkmark.svg') no-repeat;
+        background-size: cover;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .ghq-card-content {
+    &__video-responsive-wrapper {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 56.25%;
+      }
+    }
+
+    &__video {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+}
+
+.b-faq__article-related {
+  flex: 1;
+
+  UL {
+    flex-direction: column;
+    margin: -25px 0;
+
+    LI {
+      padding: 15px 0;
+      border-bottom: 1px solid $gray-lightest;
+    }
+  }
+
+  H3 {
+    margin: 0 0 40px;
+  }
+}
+
+.b-faq__article-extra {
+  flex: 1 1 100%;
+  font-size: $font-size-small;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 0 8px 14px 0 #f1f1f1;
+
+  &.locked {
+    position: relative;
+
+    @include respond-to('medium') {
+      padding-right: 200px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100px;
+      height: 150px;
+      margin: auto;
+      opacity: .2;
+      background: url(https://static.xolo.io/common/images/faq/lock-big.svg) no-repeat;
+      background-size: 100px 150px;
+
+      @include respond-to('medium') {
+        opacity: 1;
+      }
+    }
+  }
+
+  P {
+    color: $gray-dark;
+  }
+
+  SPAN {
+    padding: 0 10px;
+  }
+
+  FORM {
+    display: inline-block;
+    margin-top: 20px;
+
+    @include respond-to('medium') {
+      float: right;
+      margin: 0;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input[type="radio"] + label span {
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    background: url(https://static.xolo.io/common/images/faq/thumbup.svg) no-repeat;
+    background-size: 18px 18px;
+  }
+
+  #thumbsup {
+    & + label span {
+      background-image: url(https://static.xolo.io/common/images/faq/thumbup.svg);
+    }
+
+    &.checked + label span {
+      background-image: url(https://static.xolo.io/common/images/faq/thumbup_blue.svg);
+    }
+  }
+
+  #thumbsdown {
+    & + label span {
+      background-image: url(https://static.xolo.io/common/images/faq/thumbdown.svg);
+    }
+
+    &.checked + label span {
+      background-image: url(https://static.xolo.io/common/images/faq/thumbdown_blue.svg);
+    }
+  }
+}
+
+.b-article__nav-bar {
+  .grid {
+    padding: 20px 0;
+  }
+
+  & + section > .grid {
+    padding-top: 0;
+  }
+}
+
+.b-article__breadcrumb {
+  font-size: $font-size-tiny;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include respond-to('small') {
+    display: flex;
+  }
+}
+
+.b-article__breadcrumb-item {
+  display: inline-block;
+  color: $blue;
+  padding: 5px 0;
+
+  @include respond-to('small') {
+    display: none;
+    margin: auto 0;
+
+    &:first-child,
+    &:last-child {
+      display: block;
+    }
+  }
+
+  &.m-active {
+    color: $blue-dark;
+  }
+
+  &:not(:first-child) {
+    &:before {
+      content: "";
+      display: inline-block;
+      padding: 0 15px;
+      width: 12px;
+      height: 12px;
+      margin-left: -4px;
+      background: url(https://static.xolo.io/common/images/faq/ico-arrow.svg) no-repeat center;
+    }
+
+    @include respond-to('small') {
+      position: relative;
+      padding-left: 30px;
+
+      &:before {
+        display: inline-block;
+        position: absolute;
+        padding: 0;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  a {
+    color: $blue;
+  }
+}
+
+.c-article-link,
+.ui-menu-item {
+  font-size: $font-size-normal;
+  line-height: $line-height-medium;
+  padding-left: 30px;
+
+  &:not(.ui-state-disabled):before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 20px;
+    margin-left: -28px;
+    background: url(https://static.xolo.io/common/images/faq/ico-file.svg) no-repeat center;
+    transition: background .1s ease-in-out;
+  }
+
+  &.product {
+    &-go:before {
+      background-image: url(https://static.xolo.io/common/images/faq/ico-page-red.svg);
+      background-size: contain;
+    }
+
+    &-leap:before {
+      background-image: url(https://static.xolo.io/common/images/faq/ico-page-blue.svg);
+      background-size: contain;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: rgba($black, .5);
+    text-decoration: none;
+  }
+}
+
+.c-article-link {
+  &.locked {
+    &:after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      margin-left: 5px;
+      background: url(https://static.xolo.io/common/images/faq/lock.svg) no-repeat;
+      background-size: 12px 12px;
+    }
+  }
+}
+
+.ui-menu-item {
+  &.locked span {
+    position: relative;
+    padding-right: 15px;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 0 2px 5px;
+      background: url(https://static.xolo.io/common/images/faq/lock.svg) no-repeat;
+      background-size: 12px 12px;
+    }
+  }
+
+  .ui-state-active {
+    margin: 0;
+    border: none;
+    background: none;
+    color: inherit;
+  }
+}
+
+.c-article-link:after {
+  position: absolute;
+}
+
+.ui-widget {
+  font-family: inherit;
+  font-size: $font-size-small;
+
+  &.ui-widget-content {
+    border: none;
+  }
+
+  input {
+    font-family: inherit;
+  }
+}
+
+.ui-widget-content {
+  color: $black;
+  background: $white;
+  padding: 15px 0;
+  border: none;
+  border-top: 1px solid $gray-light;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.13);
+
+  .ui-state-focus {
+    border: none;
+    background: none;
+    font-weight: inherit;
+    color: $blue;
+    margin: 0;
+  }
+}
+
+.ui-menu {
+  .ui-menu-item {
+    font-size: $font-size-normal;
+    flex-basis: 100%;
+    padding: 6px 64px;
+
+    &:before {
+      margin-left: -39px;
+    }
+
+    &-wrapper {
+      padding: 0;
+    }
+  }
+
+  .list-filters {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to('small') {
+      flex-direction: row;
+    }
+  }
+
+  .link-more {
+    font-size: $font-size-normal;
+    padding: 15px 64px 20px;
+    text-align: left;
+
+    @include respond-to('small') {
+      text-align: right;
+    }
+
+    A {
+      color: $blue-dark;
+    }
+  }
+
+  .link-filters {
+    padding: 15px 64px 25px;
+
+    .filter {
+      color: $blue-dark;
+
+      &.active,
+      &:focus,
+      &:hover {
+        cursor: pointer;
+        font-family: $font-tertiary;
+      }
+    }
+  }
+
+  .product-type {
+    color: $gray-dark;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-tiniest;
+    padding: 6px 0 13px 0;
+    border-bottom: 1px solid rgba($gray-dark, .4);
+  }
+
+  LI {
+    flex-basis: 50%;
+  }
+}
+
+.filler {
+  background: $gray-light;
+
+  & + .filler {
+    margin-top: 20px;
+  }
+}

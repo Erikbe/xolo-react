@@ -1,0 +1,276 @@
+.header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2001;
+  transition: background .25s;
+
+  @include respond-to('medium') {
+    height: 100px;
+    transition: none;
+  }
+
+  & > .grid {
+    padding: 0;
+    align-items: center;
+    height: 100%;
+
+    .header-logo-container {
+      grid-column: start;
+    }
+
+    .header-nav-container {
+      grid-column: wrapper-start / end;
+    }
+  }
+
+  &-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+
+    @include respond-to('large') {
+      max-width: 1400px;
+      margin: 0 auto 0 0;
+    }
+
+    @include respond-to('extra-large') {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
+
+  &-dropdown-open {
+    background: $blue;
+  }
+
+  &-absolute {
+    position: absolute;
+  }
+
+  &-logo {
+    position: absolute;
+    width: 76px;
+    height: 35px;
+    background: url('#{$path-images}logo.svg') no-repeat;
+    margin: 0;
+
+    &:after {
+      content: 'Formerly LeapIN';
+      position: absolute;
+      font-family: $font-primary;
+      font-size: 10px;
+      color: rgba($white, .5);
+      bottom: 0;
+      z-index: -1;
+      white-space: nowrap;
+    }
+  }
+
+  &-logo-link {
+    @include hide-text;
+
+    display: block;
+    height: 100%;
+  }
+
+  &-logo-container {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    margin-left: 24px;
+
+    @include respond-to('medium') {
+      justify-content: center;
+    }
+  }
+
+  &-nav-container {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-in-out 0s;
+  }
+
+  &-signup {
+    .header-logo-container {
+      width: 100%;
+    }
+
+    li.user-account {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+      span.username {
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &-nav-hidden {
+    background: transparent;
+
+    .header-nav-container {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @include respond-to('medium') {
+      .header-logo-container {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @include respond-to('large') {
+      .header-logo-container {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &-scrolling {
+    box-shadow: 0 2px 5px rgba(147, 150, 158, 0.0532722), 0 10px 24px rgba(147, 150, 158, 0.06768);
+  }
+}
+
+/* Theme: Light */
+
+.header-theme-light,
+.header-dropdown-open {
+  @include respond-to('medium') {
+    a:not(.btn) {
+      color: $blue;
+
+      &:hover,
+      &:focus {
+        color: rgba($blue, .5);
+      }
+    }
+
+    .btn {
+      &-transparent {
+        color: $blue;
+        background: rgba($blue, .1);
+
+        &:hover,
+        &:focus {
+          color: $blue;
+          background: rgba($blue, .2);
+        }
+      }
+    }
+  }
+
+  &.header-scrolling,
+  &.header-dropdown-open,
+  .nav-dropdown {
+    background: $white;
+  }
+
+  .header-logo {
+    background-image: url('#{$path-images}logo.svg');
+
+    &:after {
+      color: rgba($blue, .2);
+      z-index: 2;
+    }
+  }
+
+  .nav-account:before {
+  //  background-image: url('#{$path-images}www/ico-account-blue.svg');
+  }
+
+  .nav-item {
+    &:hover,
+    &:focus {
+      .nav-item-link {
+        color: rgba($blue, .5);
+
+        &:after {
+          opacity: .6;
+        }
+      }
+    }
+
+    &.active {
+      .nav-item-link {
+        color: $blue;
+        border-color: $blue;
+      }
+    }
+  }
+
+  .nav-list-links {
+    .nav-item-link {
+      &:after {
+        border-color: $blue;
+      }
+    }
+  }
+
+  .nav-account {
+    &:after {
+      border-color: $blue;
+    }
+  }
+
+  .nav-button-burger {
+    span {
+      background: $blue;
+    }
+  }
+
+  .iconbox-circle,
+  .iconbox-links,
+  .iconbox-arrow {
+    .iconbox-title {
+      color: $blue;
+    }
+
+    .iconbox-text {
+      color: rgba($blue, .5);
+    }
+  }
+}
+
+.vertical-hr {
+  display: none;
+
+  @include respond-to('small') {
+    display: block;
+    border: none;
+    border-left: 1px solid $gray-lightest;
+    margin: 0 100px 0 0;
+  }
+}
+
+.nav-media {
+  a:hover {
+    strong {
+      color: $white;
+
+      @include respond-to('small') {
+        color: rgba($blue, .5);
+      }
+    }
+  }
+
+  strong {
+    display: block;
+    margin-top: 20px;
+    color: $white;
+
+    @include respond-to('medium') {
+      color: $blue;
+      line-height: 1.7;
+      max-width: 150px;
+    }
+  }
+}

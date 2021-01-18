@@ -1,0 +1,184 @@
+a {
+  color: $blue;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: rgba($blue, .5);
+  }
+
+  &.link-red {
+    color: $red;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $pink;
+
+    &:hover,
+    &:focus {
+      color: rgba($red, .5);
+      border-bottom-color: rgba($pink, .5);
+    }
+  }
+
+  &.link-gray {
+    color: $gray-dark;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $gray;
+
+    &:hover,
+    &:focus {
+      color: rgba($red, .5);
+      border-bottom-color: rgba($pink, .5);
+    }
+  }
+
+  &.link-more {
+    position: relative;
+    font-family: $font-tertiary;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-normal-plus;
+    padding: 20px 40px 20px 0;
+    white-space: nowrap;
+
+    @include respond-to('tiny') {
+      font-size: $font-size-medium;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: url('#{$path-images}www/icons/ico-arrow-right-blue.svg') no-repeat;
+      right: 0;
+      top: 50%;
+      width: 20px;
+      height: 14px;
+      transform: translateY(-25%);
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        opacity: .5;
+      }
+    }
+  }
+
+  &.link-back-article {
+    position: relative;
+    color: $blue;
+    font-weight: $font-weight-medium;
+    padding-left: 35px;
+    white-space: nowrap;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: url('#{$path-images}www/icons/ico-arrow-left-darkblue.svg') no-repeat;
+      left: 0;
+      top: 50%;
+      width: 25px;
+      height: 25px;
+      transform: translateY(-40%);
+    }
+
+    &:hover,
+    &:focus {
+      color: rgba($blue, .5);
+
+      &:after {
+        opacity: .5;
+      }
+    }
+  }
+
+  &.link-resend {
+    position: relative;
+    color: $red;
+    font-family: $font-tertiary;
+    padding-right: 30px;
+    white-space: nowrap;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: url('#{$path-images}www/icons/ico-arrow-right-red.svg') no-repeat;
+      right: 0;
+      top: 50%;
+      width: 20px;
+      height: 14px;
+      transform: translateY(-40%);
+    }
+  }
+
+  &.link-arrow {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: url('#{$path-images}www/icons/ico-arrow-right-blue-alt.svg') no-repeat;
+    }
+
+    &.-red:after {
+      background-image: url('#{$path-images}www/icons/ico-arrow-right-red-alt.svg')
+    }
+  }
+
+  &.-white {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+
+    &:after {
+      background-image: url('#{$path-images}www/icons/ico-arrow-right-white.svg');
+    }
+  }
+
+  &.-red {
+    color: $red;
+
+    &:hover,
+    &:focus {
+      color: rgba($red, .5);
+    }
+
+    &:after {
+      background-image: url('#{$path-images}www/icons/ico-arrow-right-red.svg');
+    }
+  }
+
+  &.-small {
+    font-size: $font-size-normal-plus;
+  }
+}
+
+.link-back {
+  position: relative;
+  color: $blue;
+  font-weight: $font-weight-medium;
+  padding-right: 25px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: url('#{$path-images}www/icons/ico-arrow-left-darkblue.svg') no-repeat;
+    right: 0;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    transform: translateY(-40%);
+  }
+
+  &.-white:after {
+    background-image: url('#{$path-images}www/icons/ico-arrow-left-white.svg')
+  }
+}

@@ -1,0 +1,84 @@
+.section-how-it-works-1 {
+  @include respond-to('small') {
+    max-height: 696px;
+  }
+
+  .grid-text {
+    justify-content: start;
+
+    @include respond-to('small') {
+      padding: 80px 0 40px;
+    }
+  }
+}
+
+.section-how-it-works-2 {
+  .grid-heading {
+    padding: 24px;
+
+    @include respond-to('small') {
+      padding: 0 0 40px;
+    }
+  }
+}
+
+.section-how-it-works-6 {
+  .iconbox {
+    position: relative;
+    padding-top: 60px;
+
+    @include respond-to('small') {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      margin: auto 20px auto 0;
+
+      @include respond-to('small') {
+        position: relative;
+        margin: 10px 20px 10px 0;
+      }
+    }
+  }
+
+  .iconbox-body {
+    width: 100%;
+
+    @include respond-to('small') {
+      width: 50%;
+    }
+  }
+}
+
+.section-how-it-works-10 {
+  .iconbox-text {
+    width: 100%;
+
+    @include respond-to('medium') {
+      width: 400px;
+    }
+  }
+}
+
+.section-how-it-works-12 {
+  grid-template-columns: [start] minmax(100px, 1fr) [wrapper-start] repeat(16, minmax(0, 45px)) [wrapper-end] minmax(40px, 1fr) [end];
+  padding: 24px 0 0 0;
+
+  @include respond-to('small') {
+    padding: 60px 0;
+  }
+}
+
+.section-how-it-works-15 {
+  .btn {
+    margin-top: 32px;
+  }
+}
+

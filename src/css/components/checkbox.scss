@@ -1,0 +1,82 @@
+/* Checkbox styles
+**
+** Classes:
+**    .checkbox
+**
+*/
+
+.checkbox {
+  position: relative;
+  display: block;
+  padding: 0 60px;
+  cursor: pointer;
+  user-select: none;
+
+  input:focus ~ .checkmark,
+  &:hover input ~ .checkmark {
+    border-color: $blue;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0 !important;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      border-color: $blue;
+
+      &:after {
+        display: block;
+      }
+    }
+
+    &:disabled ~ .checkmark {
+      cursor: not-allowed;
+      border-color:  $gray;
+
+      &:after {
+        border-color: $gray;
+      }
+    }
+
+    &.is-invalid {
+      & ~ .checkmark {
+        border-color: $red;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 1px solid $gray;
+
+    &:after {
+      content: "";
+      display: none;
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      width: 5px;
+      height: 10px;
+      border: solid $blue;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+

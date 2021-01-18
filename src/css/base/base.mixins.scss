@@ -1,0 +1,42 @@
+$breakpoints: (
+        'tiny': 360px,
+        'small': 768px,
+        'medium': 1024px,
+        'semi-large': 1366px,
+        'large': 1440px,
+        'extra-large': 1600px
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin font-smoothing($value: antialiased) {
+    @if $value == antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin text-rendering($value: optimizeLegibility) {
+    text-rendering: $value;
+}
+
+@mixin hide-text {
+    text-indent: -9999px;
+    display: block;
+    overflow: hidden;
+}

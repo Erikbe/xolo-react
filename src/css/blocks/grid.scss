@@ -1,0 +1,218 @@
+.grid {
+  --mediaStart: 11;
+  --mediaEnd: end;
+  --contentStart: wrapper-start;
+  --contentSpan: 7;
+  --headingSpan: wrapper-end;
+
+  @include respond-to('small') {
+    display: grid;
+    grid-template-columns: [start] minmax(100px, 1fr) [wrapper-start] repeat(16, minmax(0, 40px)) [wrapper-end] minmax(40px, 1fr) [end];
+    grid-gap: 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  &-article {
+    --contentStart: wrapper-start;
+    --contentSpan: wrapper-end;
+
+    @include respond-to('medium') {
+      --contentStart: 4;
+      --contentSpan: 12;
+    }
+
+    @include respond-to('large') {
+      --contentStart: 5;
+      --contentSpan: 10;
+    }
+
+    & + .grid-article {
+      padding-top: 0;
+    }
+  }
+
+  &-center {
+    --contentStart: wrapper-start;
+    --contentSpan: wrapper-end;
+
+    @include respond-to('medium') {
+      --contentStart: 4;
+      --contentSpan: 12;
+    }
+  }
+}
+
+.grid-media {
+  position: relative;
+  grid-column: var(--mediaStart, wrapper-start) / var(--mediaEnd, 10);
+  grid-row: 1;
+  line-height: 0;
+  padding: 0 0 24px 0;
+
+  @include respond-to('small') {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &-container {
+    position: relative;
+  }
+}
+
+.grid-content {
+  display: flex;
+  flex-direction: column;
+  grid-column: var(--contentStart, 11) / span var(--contentSpan, 7);
+  grid-row: 1;
+  padding: 24px;
+  justify-content: center;
+
+  @include respond-to('small') {
+    padding: 0;
+  }
+}
+
+.grid-heading {
+  grid-column: wrapper-start / var(--headingSpan);
+  grid-row: 1;
+  padding: 0 24px;
+
+  @include respond-to('small') {
+    padding: 0 0 40px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 24px 0;
+
+    @include respond-to('medium') {
+      font-size: $font-size-medium;
+      margin: 40px 0 0;
+    }
+  }
+
+  & ~ .grid-content,
+  & ~ .grid-media {
+    grid-row: 2;
+  }
+}
+
+// Placement with variables
+.grid-alt {
+  --mediaEnd: wrapper-end;
+}
+
+.grid-left {
+  --mediaStart: start;
+  --mediaEnd: 10;
+  --contentStart: 11;
+
+  &.grid-alt {
+    --mediaStart: wrapper-start;
+  }
+}
+
+@for $i from 1 to 16 {
+  .media-start-#{$i} {
+    --mediaStart: #{$i};
+  }
+
+  .media-end-#{$i} {
+    --mediaEnd: #{$i};
+  }
+
+  .content-start-#{$i} {
+    --contentStart: #{$i};
+  }
+
+  .content-span-#{$i} {
+    --contentSpan: #{$i};
+  }
+
+  .heading-span-#{$i} {
+    --headingSpan: #{$i};
+  }
+}
+
+.media-start {
+  &-start {
+    --mediaStart: start;
+  }
+
+  &-end {
+    --mediaStart: end;
+  }
+
+  &-wrapper-start {
+    --mediaStart: wrapper-start;
+  }
+
+  &-wrapper-end {
+    --mediaStart: wrapper-end;
+  }
+}
+
+.media-end {
+  &-start {
+    --mediaEnd: start;
+  }
+
+  &-end {
+    --mediaEnd: end;
+  }
+
+  &-wrapper-start {
+    --mediaEnd: wrapper-start;
+  }
+
+  &-wrapper-end {
+    --mediaEnd: wrapper-end;
+  }
+}
+
+.content-start {
+  &-start {
+    --contentStart: start;
+  }
+
+  &-end {
+    --contentStart: end;
+  }
+
+  &-wrapper-start {
+    --contentStart: wrapper-start;
+  }
+
+  &-wrapper-end {
+    --contentStart: wrapper-end;
+  }
+}
+
+.content-span {
+  &-start {
+    --contentSpan: start;
+  }
+
+  &-end {
+    --contentSpan: end;
+  }
+
+  &-wrapper-start {
+    --contentSpan: wrapper-start;
+  }
+
+  &-wrapper-end {
+    --contentSpan: wrapper-end;
+  }
+}
+

@@ -1,0 +1,72 @@
+.radio {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0 20px 0 60px;
+  margin-bottom: 0;
+  height: 50px;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+      & ~ .checkmark {
+        border: 1px solid $blue;
+
+        &:after {
+          left: 14px;
+          border-color: $blue;
+        }
+      }
+    }
+
+    &:disabled  {
+      & ~ .checkmark {
+        cursor: not-allowed;
+        opacity: .5;
+      }
+
+      & ~ strong {
+        opacity: .5;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    input:not(:disabled) {
+      & ~ .checkmark {
+        border: 1px solid $blue;
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    border: 1px solid $gray-light;
+    border-radius: 3px;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      width: 8px;
+      height: 13px;
+      border: solid $gray;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) translateY(-100%);
+    }
+  }
+}

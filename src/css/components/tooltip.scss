@@ -1,0 +1,59 @@
+.tooltip {
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 24px;
+    width: 24px;
+    background: url(https://static.xolo.io/common/images/ico-tooltip.svg) no-repeat;
+  }
+
+  .tooltip-text {
+    position: absolute;
+    color: $gray-darker;
+    font-size: $font-size-tiniest;
+    line-height: $line-height-large;
+    background: $white;
+    width: 200px;
+    text-align: left;
+    padding: 8px 16px;
+    border: 1px solid $gray-lightest;
+    border-radius: 8px;
+    box-shadow: 0 8px 14px 0 $gray-bg;
+    transition: opacity .25s;
+    top: 100%;
+    left: -88px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+
+    @include respond-to('medium') {
+      top: -5px;
+      left: 125%;
+
+      &-bottom {
+        top: 100%;
+        left: -88px;
+      }
+    }
+  }
+
+  &:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &-no-icon {
+    &:before {
+      display: none;
+    }
+
+    .tooltip-text {
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+  }
+}

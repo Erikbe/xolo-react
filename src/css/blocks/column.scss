@@ -1,0 +1,98 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &-reverse-mobile {
+    flex-wrap: wrap-reverse;
+
+    @include respond-to('medium') {
+      flex-wrap: wrap;
+    }
+  }
+
+  + .row {
+    margin-top: 32px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  margin: 0 0 32px 0;
+
+  @include respond-to('small') {
+    flex: 1;
+    margin: 0 32px 0 0;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &-end {
+    align-items: center;
+
+    @include respond-to('medium') {
+      align-items: flex-end;
+      margin: 0 50px 0 0;
+    }
+  }
+
+  &-article {
+    &-right,
+    &-left {
+      display: flex;
+      width: 100%;
+    }
+
+    &-left {
+      flex: 2;
+    }
+
+    &-right {
+      display: none;
+
+      @include respond-to('medium') {
+        display: block;
+        flex: 1;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-start {
+    align-items: center;
+
+    @include respond-to('medium') {
+      align-items: flex-start;
+    }
+  }
+
+  @for $i from 1 to 16 {
+    &-#{$i} {
+      flex: 1 1 100%;
+
+      @include respond-to('small') {
+        flex: #{$i};
+      }
+    }
+  }
+}
+
+.order-first-small {
+  order: -1;
+
+  @include respond-to('small') {
+    order: 0;
+  }
+}
+
+

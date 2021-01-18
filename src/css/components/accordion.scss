@@ -1,0 +1,393 @@
+.accordion {
+  overflow: hidden;
+
+  &-item {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &-label {
+    display: flex;
+    color: $blue;
+    font-family: $font-secondary;
+    font-size: $font-size-medium;
+    line-height: 34px;
+    padding: 24px 0;
+    cursor: pointer;
+    justify-content: space-between;
+
+    /* Icon */
+    &:hover {
+      color: rgba($blue, .8);
+    }
+
+    &::after {
+      content: "";
+      background: url('#{$path-images}www/ico-chevron-red.svg') no-repeat center;
+      color: $red;
+      width: 24px;
+      height: 34px;
+      margin-left: 40px;
+      text-align: center;
+      transition: all .5s;
+    }
+
+    &.-blue:after {
+      background: url('#{$path-images}www/ico-arrow-down-darkblue.svg') no-repeat center;
+    }
+
+    &.-blue:hover {
+      opacity: .5;
+    }
+  }
+
+  &-content {
+    color: $blue-dark;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all .5s;
+
+    > * {
+      height: 0;
+      margin: 0;
+      transition: all .5s;
+    }
+  }
+
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $blue;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($blue, 10%);
+    }
+  }
+
+
+  // :checked
+  input:checked {
+    + .accordion-label {
+
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    ~ .accordion-content {
+      max-height: 100vh;
+      padding: 12px 0 20px;
+      opacity: 1;
+
+      > * {
+        height: 100%;
+      }
+
+      > p,
+      > ul {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &-image {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+  }
+
+  &-figure {
+    img {
+      height: 0;
+
+      &.tab-active {
+        opacity: 1;
+        width: 100%;
+        padding: 24px 0 0 0;
+        transition: opacity 0.3s ease-in;
+        height: auto;
+
+        @include respond-to('medium') {
+          padding: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.accordion-animated {
+  .accordion {
+    &-label {
+      display: block;
+      font-size: $font-size-normal-plus;
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &-content {
+      font-size: $font-size-normal;
+      transition: all .4s;
+      opacity: 1;
+      transform: none;
+      max-height: 100%;
+
+      @include respond-to('medium') {
+        opacity: 0;
+        transform: translateY(80px);
+      }
+
+      > * {
+        height: 100%;
+        max-height: 100%;
+        margin-bottom: 24px;
+
+        @include respond-to('medium') {
+          height: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-item {
+      position: relative;
+      padding: 0;
+      cursor: pointer;
+      border: none;
+
+      @include respond-to('medium') {
+        padding: 8px 32px 8px 32px;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 2px;
+          height: 100%;
+        }
+      }
+
+      &:before {
+        background: $gray;
+      }
+
+      &:after {
+        background: $red;
+      }
+
+      &-active {
+        &:after,
+        & + .accordion-item:after {
+          transition: height .4s;
+        }
+
+        ~ .accordion-item:after {
+          height: 0;
+        }
+
+        .accordion-label {
+          &:hover,
+          &:focus {
+            color: $blue;
+          }
+        }
+      }
+
+      input:checked {
+
+        ~ .accordion-label {
+          font-family: $font-tertiary;
+        }
+
+        ~ .accordion-content {
+          max-height: 120px;
+          transform: none;
+          padding: 0;
+          opacity: 1;
+
+          > * {
+            height: 100%;
+          }
+
+          > p {
+            margin-bottom: 24px;
+          }
+
+          @include respond-to('medium') {
+            transform: translateY(8px);
+
+            > * {
+              max-height: 50px;
+              height: 50px;
+            }
+
+            > p {
+              margin-bottom: 32px;
+            }
+          }
+
+          @include respond-to('semi-large') {
+            > p {
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.-horizontal {
+    display: block;
+    overflow: visible;
+
+    @include respond-to('small') {
+      display: flex;
+    }
+
+    .column {
+      padding-right: 0;
+
+      @include respond-to('medium') {
+        padding-right: 40px;
+        flex-direction: row;
+      }
+
+      @include respond-to('semi-large') {
+        padding-right: 56px;
+      }
+    }
+
+    .accordion-item {
+      position: relative;
+      padding: 0;
+      overflow: visible;
+      border: none;
+
+      @include respond-to('medium') {
+        padding: 0 0 32px 0;
+      }
+
+      &:before,
+      &:after {
+        content: none;
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        height: 2px;
+
+        @include respond-to('medium') {
+          content: '';
+        }
+      }
+
+      &:before {
+        background: $gray;
+        width: 100%;
+      }
+
+      &:after {
+        background: $blue;
+        width: 0;
+        transition: all 0.5s;
+      }
+
+      img {
+        transform: translateY(80px);
+        opacity: 1;
+        transition: all .5s;
+        display: none;
+
+        @include respond-to('medium') {
+          display: block;
+        }
+      }
+
+      &-active {
+        &:after {
+          width: 100%;
+        }
+
+        img {
+          transform: translateY(-36px);
+          opacity: 0;
+        }
+      }
+
+      .accordion-label {
+        position: relative;
+        transition: all .5s;
+        transform: none;
+
+        @include respond-to('medium') {
+          position: absolute;
+          transform: translateY(80px);
+        }
+      }
+
+      .accordion-content {
+        opacity: 1;
+        max-height: none;
+        transform: none;
+
+        @include respond-to('medium') {
+          opacity: 0;
+          transform: translateY(48px);
+          max-height: 100%;
+        }
+
+        > * {
+          height: 100%;
+          margin-bottom: 0;
+        }
+      }
+
+      input:checked {
+        ~ .accordion-label {
+          position: relative;
+          transform: none;
+
+          @include respond-to('medium') {
+            position: absolute;
+            transform: translateY(-36px);
+          }
+        }
+
+        ~ .accordion-content {
+          padding: 0;
+          overflow: visible;
+          transition: all .5s;
+          opacity: 1;
+          max-height: none;
+          transform: translateY(0);
+
+          > * {
+            max-height: 100%;
+            height: auto;
+          }
+
+          > p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

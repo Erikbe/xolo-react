@@ -1,0 +1,320 @@
+.section {
+  @include respond-to('small') {
+    margin: 40px 0 0;
+  }
+
+  @include respond-to('medium') {
+    margin: 80px 0 0;
+  }
+
+  @include respond-to('large') {
+    margin: 120px 0 0;
+  }
+
+  &:last-of-type:not(.section-footer-extra) {
+    margin-bottom: 80px;
+
+    @include respond-to('large') {
+      margin-bottom: 120px;
+    }
+  }
+
+  &-blue {
+    color: $white;
+    background: $blue;
+
+    p {
+      color: $white;
+    }
+  }
+
+  &-gray {
+    color: $blue;
+    background: $gray-lighter;
+  }
+
+  &-pink {
+    color: $blue;
+    background: $pink;
+  }
+
+  &-pink-dark {
+    color: $blue;
+    background: $pink-dark;
+  }
+
+  &-red {
+    color: $white;
+    background: $red;
+
+    p {
+      color: $white;
+    }
+  }
+
+  &-articles {
+
+    @include respond-to('small') {
+      margin-bottom: 40px;
+    }
+
+    @include respond-to('medium') {
+      margin-bottom: 80px;
+    }
+
+    @include respond-to('large') {
+      margin-bottom: 120px;
+    }
+
+    .card-title {
+
+      @include respond-to('small') {
+        height: 150px;
+      }
+
+      @include respond-to('large') {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.section-header {
+  padding-top: 60px;
+  margin-top: 0;
+
+  @include respond-to('medium') {
+    padding-top: 100px;
+  }
+
+
+  .grid {
+    padding: 0;
+  }
+
+  .grid-media {
+    padding: 0;
+    margin: auto 0 0;
+  }
+
+  .grid-text {
+    @include respond-to('small') {
+      padding: 0 0 40px;
+    }
+  }
+
+  &-without-image {
+    padding-top: 60px;
+    margin-top: 0;
+
+    @include respond-to('medium') {
+      padding: 200px 0 108px;
+    }
+
+    p {
+      color: $blue;
+      font-size: $font-size-medium;
+      line-height: 40px;
+    }
+  }
+
+  .section-media {
+    img {
+
+      @include respond-to('medium') {
+        height: 100%;
+      }
+
+      @include respond-to('large') {
+        height: auto;
+      }
+    }
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+
+  @include respond-to('large') {
+    max-width: 1280px;
+    margin: 0 0 0 160px;
+  }
+
+  @include respond-to('large') {
+    margin: 0 auto 0 160px;
+  }
+
+  @include respond-to('extra-large') {
+    margin: 0 auto;
+    max-width: 1440px;
+    justify-content: center;
+  }
+}
+
+.section-body {
+  width: 100%;
+  padding: 40px 24px;
+
+  @include respond-to('medium') {
+    padding: 0 40px;
+  }
+
+  @include respond-to('large') {
+    padding: 0 100px 0 0;
+  }
+
+  @include respond-to('extra-large') {
+    padding: 0;
+  }
+
+  > ul {
+    color: $blue-dark;
+  }
+}
+
+.section-media {
+  position: relative;
+  height: 70vw;
+  overflow: hidden;
+  margin: 0;
+
+  @include respond-to('small') {
+    height: 100%;
+    margin: 0 0 0 60px;
+  }
+
+  @include respond-to('medium') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: initial;
+  }
+
+  @include respond-to('large') {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 0;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    transform: translateY(-50%);
+
+    @include respond-to('small') {
+      right: 0;
+      top: 50%;
+    }
+
+    @include respond-to('medium') {
+      position: initial;
+      width: 100%;
+      transform: none;
+    }
+  }
+
+  &-left {
+    @include respond-to('small') {
+      margin: 0 60px 0 0;
+    }
+
+    @include respond-to('large') {
+      left: -160px;
+      right: auto;
+    }
+
+    @include respond-to('extra-large') {
+      left: 0;
+    }
+  }
+
+  &-title {
+    position: absolute;
+    color: $white;
+    background: rgba($blue, .8);
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    font-size: $font-size-tiny;
+
+    @include respond-to('small') {
+      font-size: $font-size-normal-plus;
+    }
+
+    @include respond-to('medium') {
+      display: block;
+      background: $blue;
+      padding: 40px;
+      bottom: -28px;
+      min-width: 350px;
+    }
+
+    .tagline {
+      margin-top: 30px;
+    }
+
+    &.-red {
+      background-color: $red;
+
+      &.-left {
+        @include respond-to('medium') {
+          font-size: $font-size-normal;
+          bottom: 40px;
+          left: -140px;
+          right: auto;
+          min-width: 200px;
+          padding: 35px;
+        }
+      }
+
+      &.-right {
+        @include respond-to('medium') {
+          font-size: $font-size-normal;
+          bottom: 40px;
+          right: -50px;
+          left: auto;
+          min-width: 200px;
+          padding: 35px;
+        }
+      }
+    }
+  }
+}
+
+.section-cards {
+  margin-top: 100px;
+}
+
+.section-footer-extra {
+  padding: 30px 0 0;
+
+  @include respond-to('small') {
+    padding: 70px 0;
+  }
+
+  h2 {
+    margin: 0;
+
+    @include respond-to('small') {
+      margin: 0 0 32px;
+    }
+  }
+
+  .input-group {
+    max-width: 472px;
+  }
+
+  .order-first-small {
+    margin: 0 0 32px;
+  }
+
+  input {
+    border-color: rgba(#082471, .1);
+  }
+}

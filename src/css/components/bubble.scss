@@ -1,0 +1,48 @@
+.bubble {
+  display: flex;
+  font-family: $font-secondary;
+  color: $white;
+  background: $red;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+
+  &.-active {
+    background: $blue !important;
+    color: $white !important;
+  }
+
+  &.-gray {
+    background: $gray;
+    color: $blue-dark;
+  }
+
+  &.-blue {
+    background: $blue;
+    color: white;
+  }
+
+  &.-red {
+    background: $red;
+    color: white;
+  }
+
+  &.-arrow-right {
+    &:after {
+      content: '';
+      background: url('#{$path-images}www/ico-arrow-right-small.svg') no-repeat;
+      left: 0;
+      top: 50%;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &-title {
+    font-family: $font-tertiary;
+    margin-bottom: 12px;
+  }
+}

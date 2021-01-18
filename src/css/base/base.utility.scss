@@ -1,0 +1,182 @@
+.mobile-hide {
+  @media only screen and (max-width: map-get($breakpoints, 'small')) {
+    display: none !important;
+  }
+}
+
+.tablet-hide {
+  @media only screen and (max-width: map-get($breakpoints, 'medium') - 1) {
+    display: none !important;
+  }
+}
+
+.desktop-hide {
+  @media only screen and (min-width: map-get($breakpoints, 'medium')) {
+    display: none !important;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.text-right {
+  text-align: left;
+
+  @include respond-to('small') {
+    text-align: right;
+  }
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@include respond-to('small') {
+  .flex-sm-align-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.grid-column-start {
+  grid-column: wrapper-start/var(--headingSpan);
+}
+
+.pos-relative {
+  position: relative;
+}
+
+@each $color-name, $color-code in $colors {
+  .text-#{$color-name} {
+    color: $color-code;
+  }
+}
+
+@each $line-height-name, $line-height-code in $line-heights {
+  .text-line-height-#{$line-height-name} {
+    line-height: $line-height-code;
+  }
+}
+
+@each $font-size-name, $font-size-code in $font-sizes {
+  .text-size-#{$font-size-name} {
+    font-size: $font-size-code;
+  }
+}
+
+$default-spacing: 1rem;
+$sides: (top, bottom, left, right);
+$spacings: (
+        auto: auto,
+        0: 0,
+        1: 0.5 * $default-spacing,
+        2: 1 * $default-spacing,
+        3: 1.5 * $default-spacing,
+        4: 2 * $default-spacing,
+        5: 2.5 * $default-spacing,
+        6: 3 * $default-spacing,
+        7: 3.5 * $default-spacing,
+        8: 4 * $default-spacing,
+        9: 4.5 * $default-spacing
+);
+$breakpoint-shortnames: (
+        'tiny': 'xs',
+        'small': 'sm',
+        'medium': 'md',
+        'semi-large': 'slg',
+        'large': 'lg',
+        'extra-large': 'xl'
+);
+
+@each $key, $value in $spacings {
+  .m-#{$key} {
+    margin: #{$value} !important;
+  }
+
+  .p-#{$key} {
+    padding: #{$value} !important;
+  }
+
+  @each $name, $shortname in $breakpoint-shortnames {
+    @include respond-to($name) {
+      .m-#{$shortname}-#{$key} {
+        margin: #{$value} !important;
+      }
+
+      .p-#{$shortname}-#{$key} {
+        padding: #{$value} !important;
+      }
+    }
+  }
+
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$key} {
+      margin-#{$side}: #{$value} !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$key} {
+      padding-#{$side}: #{$value} !important;
+    }
+
+    @each $name, $shortname in $breakpoint-shortnames {
+      @include respond-to($name) {
+        .m#{str-slice($side, 0, 1)}-#{$shortname}-#{$key} {
+          margin-#{$side}: #{$value} !important;
+        }
+
+        .p#{str-slice($side, 0, 1)}-#{$shortname}-#{$key} {
+          padding-#{$side}: #{$value} !important;
+        }
+      }
+    }
+  }
+}
+
+@each $color-name, $color-code in $colors {
+  .border-#{$color-name} {
+    border-color: $color-code !important;
+  }
+}
+
+.border {
+  border: 1px solid $gray-lightest;
+}
+
+@each $side in $sides {
+  .border-#{str-slice($side, 0, 1)} {
+    border-#{$side}: 1px solid $gray-lightest;
+  }
+}

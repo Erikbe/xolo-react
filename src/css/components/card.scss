@@ -1,0 +1,301 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  word-wrap: break-word;
+  background-color: $gray-light;
+
+  &-blue {
+    background: $blue;
+    color: $white;
+
+    .card-title,
+    .card-header,
+    .card-features,
+    .card-footer a,
+    .list-check,
+    p {
+      color: $white;
+    }
+  }
+
+  &-red {
+    color: $white;
+    background: $red;
+
+    p,
+    .card-title,
+    .list-check {
+      color: $white;
+    }
+  }
+
+  &-pink {
+    background: $pink;
+  }
+
+  &-darkpink {
+    background: $pink-dark;
+  }
+
+  &-gray {
+    background: $gray-dark;
+  }
+
+  &-lightgray {
+    background: rgba($gray-dark, .4);
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .card-title {
+    font-family: $font-tertiary;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+
+    h3 {
+      line-height: 34px;
+    }
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 40px;
+
+    .flex-center {
+      display: block;
+
+      @include respond-to('small') {
+        display: flex;
+      }
+
+      h4 {
+        margin-bottom: 24px;
+
+        @include respond-to('small') {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 40px;
+  }
+
+  &-recommend {
+    height: auto;
+    background: $white;
+    box-shadow: 0 8px 14px 0 $shadow-color;
+
+    @include respond-to('small') {
+      flex-direction: row;
+    }
+
+    .bubble {
+      min-width: 48px;
+    }
+
+    .card-body {
+      padding: 28px;
+    }
+  }
+}
+
+.card-product {
+  font-size: $font-size-medium;
+
+  p {
+    line-height: $line-height-large;
+  }
+
+  .card-title {
+    font-size: $font-size-large;
+  }
+
+  @include respond-to('small') {
+    .card-body,
+    .card-footer {
+      padding: 56px;
+    }
+
+    .card-title {
+      font-size: $font-size-larger;
+    }
+  }
+
+  &-alt {
+    .card-body {
+      padding-bottom: 0;
+    }
+
+    .card-footer {
+      padding-top: 0;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.card-referral {
+  font-size: $font-size-small;
+  padding: 24px;
+  background: $pink;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  max-width: 550px;
+
+  @include respond-to('medium') {
+    max-width: 100%;
+  }
+}
+
+.card-deck {
+  flex-direction: column;
+  flex-basis: 100%;
+  display: flex;
+  position: relative;
+  margin: -24px;
+
+  @include respond-to('small') {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  @include respond-to('medium') {
+    margin-bottom: 0;
+  }
+
+  .card {
+    flex: 1;
+    border-radius: 0;
+    margin: 0;
+    transition: top ease 0.2s;
+    max-width: none;
+    height: auto;
+    top: 0;
+
+    @include respond-to('small') {
+      border-radius: 10px;
+      max-width: 230px;
+      margin: 0 0 32px 0;
+    }
+
+    @include respond-to('medium') {
+      height: 300px;
+    }
+
+    &:hover {
+      top: 0;
+
+      @include respond-to('small') {
+        top: -5px;
+      }
+
+      .link-more {
+        bottom: -60px;
+      }
+    }
+
+    &-body {
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: row;
+
+      @include respond-to('small') {
+        display: block;
+      }
+
+      .card-text {
+        width: 256px;
+
+        @include respond-to('small') {
+          width: 100%;
+        }
+
+        p {
+          margin: 0;
+
+          @include respond-to('small') {
+            margin: 0 0 32px 0;
+          }
+        }
+      }
+
+      .btn {
+        display: none;
+
+        @include respond-to('small') {
+          display: inline-block;
+        }
+      }
+
+      .bubble {
+        display: flex;
+        min-width: 48px;
+        margin-left: auto;
+
+        @include respond-to('small') {
+          display: none;
+        }
+      }
+
+      @include respond-to('small') {
+        padding: 40px;
+      }
+
+      &:hover,
+      &:focus {
+        p {
+          color: rgba($white, .5);
+        }
+
+        .btn-blue {
+          background: darken($blue, 8%);
+          color: $white;
+        }
+
+        .btn-red {
+          background: darken($red, 8%);
+        }
+      }
+    }
+
+    &-lightgray {
+      background: #697AA8;
+      z-index: 1;
+      color: $white;
+    }
+
+    &-gray {
+      background: #435892;
+
+      @include respond-to('small') {
+        margin: 16px -25px 32px;
+      }
+    }
+  }
+
+  .link-more {
+    font-size: $font-size-small;
+    left: 24px;
+
+    @include respond-to('small') {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+    }
+
+    @include respond-to('large') {
+      right: 40px;
+      left: auto;
+    }
+  }
+}

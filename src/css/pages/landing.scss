@@ -1,0 +1,512 @@
+.page-landing {
+  .section-header {
+    height: 850px;
+    margin-bottom: 20vw;
+
+    br {
+      display: none;
+    }
+
+    @include respond-to('small') {
+      height: 750px;
+
+      br {
+        display: block;
+      }
+
+      form {
+        width: 472px;
+        margin: auto;
+      }
+
+      .grid-media {
+        grid-row: 2;
+        grid-column: 3 / 17;
+      }
+
+      .grid-text {
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 1210px) {
+      .section-header {
+        .grid {
+          --textStart: 2;
+          --textSpan: 16;
+
+          &-media {
+            grid-column: 2 / 18;
+          }
+        }
+      }
+
+      .grid-left.grid-alt {
+        --mediaStart: start;
+
+        .grid-media {
+          padding: 0;
+          margin: auto 0 48px;
+        }
+      }
+    }
+
+    @include respond-to('medium') {
+      height: 913px;
+      padding-top: 160px;
+      text-align: center;
+      margin-bottom: 25vw;
+
+      h1 {
+        font-size: $font-size-larger;
+      }
+
+      p {
+        padding: 10px 0 30px;
+      }
+    }
+
+    @include respond-to('large') {
+      margin-bottom: 350px;
+    }
+  }
+}
+
+.page-home {
+  overflow: hidden;
+
+  .section-header {
+    padding-bottom: 55vw;
+    margin-bottom: 15vw;
+
+    .grid-media {
+      img {
+        position: absolute;
+      }
+    }
+
+    @include respond-to('small') {
+      .grid {
+        display: block;
+
+        &-text {
+          padding: 24px;
+        }
+      }
+    }
+
+    @include respond-to('medium') {
+      padding-bottom: 0;
+      margin-bottom: 80px;
+
+      .grid {
+        display: grid;
+
+        &-media img {
+          bottom: -100px;
+          right: -100px;
+        }
+
+        &-text {
+          padding: 0 0 40px;
+        }
+      }
+    }
+
+    @include respond-to('large') {
+      .grid-text {
+        position: relative;
+
+        .tp-image {
+          position: absolute;
+          bottom: 30px;
+        }
+      }
+    }
+  }
+  .text-right {
+    @include respond-to('small') {
+      width: 433px;
+    }
+
+    .link-more {
+      font-size: $font-size-small;
+    }
+  }
+
+  .section-home-2 {
+    .iconbox-row {
+      flex-wrap: wrap;
+
+      .iconbox {
+        justify-content: space-evenly;
+        margin-bottom: 32px;
+
+        &-body {
+          min-width: 100px;
+          width: 70%;
+        }
+      }
+    }
+
+      @include respond-to('medium') {
+        .iconbox-row {
+          flex-wrap: nowrap;
+
+          .iconbox {
+            justify-content: flex-end;
+            margin-bottom: 0;
+
+            &:before {
+              width: 90px;
+            }
+
+            &-body {
+              min-width: 0;
+              width: auto;
+            }
+          }
+
+          .iconbox-world {
+            padding-right: 0;
+          }
+        }
+      }
+  }
+
+  .section-home-7 {
+    .spacer-bottom {
+      grid-row: 4;
+    }
+  }
+
+  .section-home-8 {
+    .column:last-child {
+      @include respond-to('small') {
+        align-items: flex-end;
+        align-self: center;
+
+        p {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  .section-home-14 {
+    .grid-heading {
+      padding: 24px;
+
+      @include respond-to('small') {
+        padding: 0 0 24px;
+      }
+    }
+  }
+
+  .section-home-15 {
+    .column:first-child {
+      flex: 2;
+      flex-basis: 100%;
+      margin: 0 0 32px 0;
+
+      @include respond-to('medium') {
+        flex-basis: auto;
+        margin: 0;
+      }
+    }
+
+    .column {
+      flex-direction: row;
+      align-self: center;
+      flex-basis: 100%;
+      margin: 0 0 32px;
+
+      @include respond-to('tiny') {
+        flex-basis: 50%;
+      }
+
+      @include respond-to('medium') {
+        flex-direction: column;
+        flex-basis: auto;
+        margin: 0;
+
+      }
+    }
+  }
+
+  .section-home-16 {
+    padding: 0 0 24px 0;
+
+    @include respond-to('small') {
+      padding: 60px 0;
+    }
+
+    .column {
+      flex-basis: 100%;
+
+      @include respond-to('tiny') {
+        flex-basis: 50%;
+      }
+
+      @include respond-to('small') {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+.section-business-banking-1 {
+  .grid-text {
+    padding-top: 60px;
+
+    @include respond-to('small') {
+      padding-top: 40px;
+    }
+
+    @include respond-to('medium') {
+      padding-top: 100px;
+    }
+
+    .btn-small {
+      padding: 5px 18px;
+      font-size: $font-size-tiniest;
+    }
+
+    .btn-small,
+    .btn-medium {
+      font-family: $font-primary;
+    }
+
+    p {
+      color: $blue;
+      max-width: 100%;
+
+      @include respond-to('small') {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+.section-business-banking-2,
+.section-business-banking-7 {
+  .iconbox {
+    padding-right: 0;
+
+    @include respond-to('small') {
+      padding-right: 100px;
+    }
+
+    &-body {
+      margin-top: 36px;
+    }
+
+    &-title {
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      color: $blue-dark;
+    }
+  }
+}
+
+.section-business-banking-4 {
+  .card {
+    &-image {
+      margin-bottom: 48px;
+    }
+
+    h3 {
+      font-size: $font-size-large;
+    }
+
+    p {
+      margin-bottom: 72px;
+    }
+
+    hr {
+      border-color: rgba($gray, .1);
+    }
+  }
+}
+
+.section-business-banking-6 {
+  .info-paragraph {
+    font-size: $font-size-tiny;
+    color: $gray-darker;
+  }
+}
+
+.section-business-banking-11 {
+  .iconbox {
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:before {
+      width: 20px;
+      height: 20px;
+      margin: 7px 20px auto 0;
+
+      @include respond-to('small') {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &-text {
+      color: $blue-dark;
+      font-size: $font-size-small;
+    }
+  }
+}
+
+.section-german-solopreneurs-1 {
+  @include respond-to('medium') {
+    max-height: 756px;
+
+    h1 {
+      font-size: $font-size-larger;
+    }
+  }
+}
+
+.section-german-solopreneurs-2 {
+  .grid-heading {
+    padding: 24px 24px 0;
+
+    @include respond-to('small') {
+      padding: 0 0 40px;
+    }
+  }
+}
+
+.section-german-solopreneurs-4 {
+  @include respond-to('small') {
+    .column-10 {
+      padding-left: 0;
+    }
+
+    .column-10 {
+      flex: auto;
+    }
+  }
+
+  @include respond-to('medium') {
+    .column-10 {
+      padding-left: 100px;
+    }
+
+    .column-10 {
+      flex: 10;
+    }
+  }
+}
+
+.section-german-solopreneurs-10 {
+  h2 {
+    font-size: $font-size-medium;
+  }
+
+  @include respond-to('medium') {
+    h2 {
+      font-size: $font-size-large;
+    }
+  }
+}
+
+.section-german-solopreneurs-15 {
+  .plan-description {
+    width: 150px;
+
+    @include respond-to('small') {
+      width: 300px;
+    }
+  }
+}
+
+.section-go-1 {
+  @include respond-to('medium') {
+    .heading-extra {
+      font-size: $font-size-large;
+      line-height: $line-height-normal;
+    }
+  }
+}
+
+.section-go-6 {
+  .column-7 {
+     .row {
+       div {
+         margin-right: 64px;
+
+         &:last-child {
+           margin-right: 0;
+         }
+       }
+     }
+  }
+}
+
+.section-go-15 {
+  .section-media-title {
+    left: 0;
+    right: auto;
+
+    @include respond-to('small') {
+      font-size: $font-size-tiny;
+    }
+
+    @include respond-to('medium') {
+      font-size: $font-size-normal-plus;
+    }
+  }
+
+  .testimonial.small {
+    @include respond-to('small') {
+      font-size: $font-size-normal;
+    }
+
+    @include respond-to('medium') {
+      font-size: 28px;
+    }
+  }
+}
+
+.section-go-17 {
+  .accordion-label {
+    padding: 32px 0;
+  }
+  .border-b {
+    border-bottom: 1px solid $gray-dark;
+  }
+
+  .border-t {
+    border-top: 1px solid $gray-dark;
+  }
+}
+
+.section-go-nomada-digital-1 {
+  @include respond-to('small') {
+    max-height: 696px;
+  }
+
+  .grid-text {
+    justify-content: start;
+
+    h1 {
+      font-size: $font-size-large;
+    }
+
+    @include respond-to('small') {
+      padding: 80px 0 40px;
+    }
+
+    @include respond-to('medium') {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+}

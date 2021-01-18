@@ -1,0 +1,156 @@
+.iconbox {
+  display: flex;
+  letter-spacing: -.1px;
+
+  &:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    margin: auto 20px auto 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-title {
+    color: $blue;
+    font-family: $font-tertiary;
+    font-weight: $font-weight-bold;
+    margin-bottom: 12px;
+  }
+
+  &-body {
+    color: $gray-darker;
+  }
+
+  &-text {
+    font-size: $font-size-small;
+    line-height: $line-height-large;
+  }
+
+  &.iconbox-top {
+    position: relative;
+    padding-top: 60px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 1;
+    }
+  }
+
+  &.-bubble {
+    &:before {
+      width: 26px;
+      height: 26px;
+      top: 15px;
+      left: 15px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      left: 0;
+      top: 0;
+    }
+
+    &-red:after {
+      background: $red;
+    }
+
+    &-blue:after {
+      background: $blue;
+    }
+
+    &-pink:after {
+      background: $pink;
+    }
+
+    &-gray:after {
+      background: $gray;
+    }
+
+    &-white:after {
+      background: $white;
+    }
+  }
+
+  /* Icons */
+
+  &-world:before {
+    background-image: url('#{$path-images}www/icons/ico-world.svg');
+  }
+
+  &-business-red:before {
+    background-image: url('#{$path-images}www/icons/ico-business-red.svg');
+  }
+
+  &-tools-red:before {
+    background-image: url('#{$path-images}www/icons/ico-tools-red.svg');
+  }
+}
+
+.iconbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .iconbox {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 28px;
+    width: 100%;
+
+    @include respond-to('medium') {
+      justify-content: flex-end;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-body {
+      min-width: 100px;
+      width: 50%;
+    }
+  }
+
+  .iconbox-top {
+    .iconbox-body {
+      width: 100%;
+      margin-top: 18px;
+    }
+  }
+
+  @include respond-to('small') {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .iconbox {
+      padding-right: 60px;
+      margin: 0;
+      width: auto;
+
+      &-body {
+        min-width: 0;
+        width: auto;
+      }
+    }
+
+    .iconbox-clock {
+      padding-right: 0;
+    }
+  }
+
+  &.-wide {
+    @include respond-to('small') {
+      .iconbox {
+        width: 100%;
+      }
+    }
+  }
+}

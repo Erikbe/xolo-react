@@ -1,0 +1,220 @@
+.btn {
+  display: inline-block;
+  color: $blue;
+  background: rgba($blue, .1);
+  font-family: $font-tertiary;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  line-height: 26px;
+  padding: 11px 24px;
+  border-radius: 100px;
+  transition: all ease-out .25s;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+    background: rgba($blue, .2);
+    text-decoration: none;
+  }
+
+  &-forward {
+    position: relative;
+    width: 100px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid $blue;
+    background: transparent;
+
+    &-white {
+      border: 1px solid $white;
+      position: relative;
+      width: 100px;
+      height: 48px;
+      border-radius: 100px;
+      background: transparent;
+
+      &:after {
+        content: '';
+        position: absolute;
+       // background: url('#{$path-images}www/ico-arrow-right-white.svg') no-repeat;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 14px;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover,
+      &:focus {
+        background: rgba($white, .2);
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+    //  background: url('#{$path-images}www/ico-arrow-right-blue.svg') no-repeat;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 14px;
+      transform: translate(-50%, -50%);
+    }
+
+    &.btn-red:after {
+   //   background-image: url('#{$path-images}www/ico-arrow-right-white.svg')
+    }
+  }
+
+  &-large {
+    font-size: $font-size-normal-plus;
+    padding: 13px 30px 17px;
+  }
+
+  &-transparent {
+    color: $white;
+    background: rgba($white, .1);
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: rgba($white, .2);
+    }
+  }
+
+  &-red {
+    color: $white;
+    background: $red;
+    border: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: #d9544b;
+    }
+
+    &.btn-forward:after {
+    //  background-image: url('#{$path-images}www/ico-arrow-right-white.svg')
+    }
+  }
+
+  &-blue {
+    color: $white;
+    background: $blue;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: #274083;
+    }
+  }
+
+  &-white {
+    background: $gray-lightest;
+
+    &:hover,
+    &:focus {
+      color: rgba($blue, .4);
+      background: $gray-lightest;
+    }
+  }
+}
+
+.btn-play {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(0,0,0,0.3);
+
+  @include respond-to('small') {
+    transform: translate(-40%, 0);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 50%;
+    animation: pulse-border 2000ms ease-in-out 0s, animate-background-blue 2000ms ease-in-out 0s;
+    animation-delay: 2s;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    background: $blue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: all 200ms;
+  }
+
+  &:hover:after {
+    background: #274083;
+  }
+
+  &-red {
+    &:hover:after {
+      background: #d9544b;
+    }
+
+    &:before {
+      animation: pulse-border 2000ms ease-in-out 0s, animate-background-red 2000ms ease-in-out 0s;
+    }
+
+    &:after {
+      background: $red;
+    }
+  }
+
+  span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    margin-left: 5px;
+    border-left: 20px solid $white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes animate-background-blue {
+  0% {
+    background: $blue;
+  }
+}
+
+@keyframes animate-background-red{
+  0% {
+    background: $red;
+  }
+}

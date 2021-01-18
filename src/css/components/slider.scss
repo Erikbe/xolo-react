@@ -1,0 +1,82 @@
+.slick {
+  &-track {
+    display: flex;
+  }
+
+  &-slide {
+    height: inherit;
+    padding-right: 40px;
+    outline: none;
+
+    @media (max-width: 920px) {
+      padding-right: 10px;
+
+      .card-body {
+        padding: 20px;
+
+        p {
+          font-size: $font-size-tiny;
+          margin: 0;
+        }
+      }
+    }
+
+    .card {
+      img {
+        width: 100%;
+      }
+    }
+
+    & > div {
+      height: 100%;
+    }
+  }
+
+  &-list {
+    padding-left: 0 !important;
+  }
+}
+
+.slider-arrow {
+  &-prev {
+    margin-right: 30px;
+  }
+
+  &-prev,
+  &-next {
+    img {
+      cursor: pointer;
+      transition: all .2s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, 'small')) {
+  .slider-arrows {
+    display: flex;
+    position: absolute;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    bottom: -250px;
+    justify-content: space-between;
+    z-index: 2;
+
+    .slick-arrow {
+      padding: 9px 10px;
+      border-radius: 50%;
+      background: $white;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 15px;
+      }
+    }
+  }
+}

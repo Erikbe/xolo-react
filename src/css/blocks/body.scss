@@ -1,0 +1,40 @@
+body {
+  &.m-sidebar {
+    position: fixed;
+    overflow: hidden;
+  }
+}
+
+.main {
+  &-signup {
+    @include respond-to('medium') {
+      height: calc(100% - 138px);
+      position: relative;
+    }
+  }
+}
+
+.dev-mode {
+  margin-top: 15px;
+
+  &:before {
+    content: 'DEVELOPMENT MODE';
+    position: fixed;
+    color: $white;
+    font-weight: $font-weight-bold;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 5px;
+    top: 0;
+    height: 15px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px 5px #000;
+    background: repeating-linear-gradient(-45deg, #fdd803, #fdd803 10px, #000 10px, #000 20px);
+    z-index: 1090;
+  }
+
+  .header {
+    margin-top: 15px;
+  }
+}

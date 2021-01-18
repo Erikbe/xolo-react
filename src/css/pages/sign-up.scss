@@ -1,0 +1,167 @@
+.section-product {
+  &.section-signup {
+    padding-top: 100px;
+  }
+
+  @include respond-to('medium') {
+    .card-product {
+      .card-title {
+        margin-bottom: 30px;
+      }
+
+      .card-body {
+        padding: 72px;
+      }
+
+      .card-footer {
+        padding: 8px 72px 80px;
+      }
+
+      h1.large {
+        margin: 60px 0 16px;
+      }
+    }
+  }
+
+  .card-gray {
+    background-color: $gray-light;
+  }
+
+  .section-title {
+    padding-bottom: 30px;
+  }
+
+  .card-product {
+    ul, p {
+      font-size: $font-size-normal-plus;
+    }
+
+    @include respond-to('small') {
+      .card-body,
+      .card-footer {
+        padding: 56px;
+      }
+    }
+
+    .card-title {
+      font-size: 40px;
+    }
+
+    .card-extra {
+      font-size: $font-size-normal;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      line-height: 1;
+      margin-bottom: 32px;
+
+      span {
+        font-size: $font-size-normal-plus;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .card-footer {
+    .additional-info {
+      flex: 1 1 100%;
+      font-size: 15px;
+    }
+
+    a.btn {
+      font-size: 18px;
+    }
+
+    a.link-more {
+      font-size: 16px;
+
+      &:after {
+        top: 47%;
+      }
+    }
+  }
+
+  .badge {
+    &-red {
+      span {
+        background: $red;
+      }
+    }
+  }
+
+  .section-signup-title {
+    padding-bottom: 50px;
+  }
+
+  .link-more {
+    padding: 20px 44px 20px 0;
+  }
+}
+
+.back-link {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.referral-code {
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 17px;
+}
+
+.email-tip {
+  margin-top: 30px;
+
+  a {
+    font-size: 16px;
+    padding: 15px 35px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+}
+
+.email-resend {
+  cursor: pointer;
+}
+
+.help-block {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+
+  @include respond-to('medium') {
+    display: flex;
+  }
+
+  &-gray {
+    background: $gray-light;
+  }
+
+  &-pink {
+    background: $pink;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 72px;
+    height: 100%;
+
+    h3 {
+      font-family: $font-primary;
+      font-size: $font-size-large;
+      line-height: $line-height-medium;
+    }
+
+    p {
+      font-size: $font-size-small;
+    }
+  }
+}
+
+
+
